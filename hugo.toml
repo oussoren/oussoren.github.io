@@ -1,4 +1,31 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Max Oussoren'
 theme = 'cactus'
+
+[params]
+  mathjax = true  # not required
+  colortheme = "dark" # dark, light, white, or classic
+  description = "Hi"
+  mainSectionTitle = "Posts"
+  icon = "/images/favicon.ico"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 1
