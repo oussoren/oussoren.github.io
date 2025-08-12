@@ -78,12 +78,6 @@
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href=" http://localhost:1313/posts/test/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
         
         <li>
           <a class="icon" href="http://localhost:1313/posts/cs-61a-notes/" aria-label="Next">
@@ -206,6 +200,96 @@
     <li><a href="#chapter-7">Chapter 7</a>
       <ul>
         <li><a href="#applications-of-projections-in-mathbfrn-orthogonal-bases-of-planes-and-linear-regression">Applications of Projections in $\mathbf{R}^n$: orthogonal bases of planes and linear regression</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-8">Chapter 8</a>
+      <ul>
+        <li><a href="#multivariable-functions-level-sets-and-contour-plots">Multivariable functions, level sets, and contour plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-9">Chapter 9</a>
+      <ul>
+        <li><a href="#partial-derivatives-and-contour-plots">Partial derivatives and contour plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-10">Chapter 10</a>
+      <ul>
+        <li><a href="#maxima-minima-and-critical-points">Maxima, minima, and critical points</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-11">Chapter 11</a>
+      <ul>
+        <li><a href="#gradients-local-approximations-and-gradient-descent">Gradients, local approximations, and gradient descent!</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-12">Chapter 12</a>
+      <ul>
+        <li><a href="#constrained-optimization-via-lagrange-multipliers">Constrained optimization via Lagrange multipliers</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-13">Chapter 13</a>
+      <ul>
+        <li><a href="#linear-functions-matrices-and-the-derivative-matrix">Linear functions, matrices, and the derivative matrix</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-14">Chapter 14</a>
+      <ul>
+        <li><a href="#linear-transformations-and-matrix-multiplication">Linear transformations and matrix multiplication</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-15">Chapter 15</a>
+      <ul>
+        <li><a href="#matrix-algebra">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-16">Chapter 16</a>
+      <ul>
+        <li><a href="#markov-matrices">Markov Matrices</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-17">Chapter 17</a>
+      <ul>
+        <li><a href="#matrix-algebra-1">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-18">Chapter 18</a>
+      <ul>
+        <li><a href="#matrix-algebra-2">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-19">Chapter 19</a>
+      <ul>
+        <li><a href="#matrix-algebra-3">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-20">Chapter 20</a>
+      <ul>
+        <li><a href="#matrix-algebra-4">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-21">Chapter 21</a>
+      <ul>
+        <li><a href="#matrix-algebra-5">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-22">Chapter 22</a>
+      <ul>
+        <li><a href="#matrix-algebra-6">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-23">Chapter 23</a>
+      <ul>
+        <li><a href="#matrix-algebra-7">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-24">Chapter 24</a>
+      <ul>
+        <li><a href="#matrix-algebra-8">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-25">Chapter 25</a>
+      <ul>
+        <li><a href="#matrix-algebra-9">Matrix Algebra</a></li>
       </ul>
     </li>
   </ul>
@@ -834,7 +918,7 @@ called the <em>Projection of x onto V</em>, and is denoted $Proj_{v}(x)$. The pr
 $v \in V$ with the property that the displacement $x-v$ is perpendicular to <em>V</em>.
 If <em>V</em> is nonzero then for any orthogonal basis $v_1, v_2, &hellip;, v_k$ of <em>V</em> we have
 $$Proj_{V}(x)=Proj_{v_1}(x)+Proj_{v_2}(x)+&hellip;+Proj_{v_k}(x)$$,
-where $Proj_{v_i}(x)=((x\cdot{v_i})/(v_{i}\cdot{v_i}))v_i$.</p>
+where $Proj_{v_i}(x)=\frac{(x\cdot{v_i})}{(v_{i}\cdot{v_i})}v_i$.</p>
 <p>(For $x\in V$ we have $Proj_{V}(x)=x$&ndash;the point in <em>V</em> closest
 to x is itself.)</p>
 <p>It may seem confusing that the basis must be orthogonal for this formula to hold true, afterall we have proved that for
@@ -933,7 +1017,705 @@ of the vectors $v$ and $w$. This now offers us the alternative geometric interpr
 <p>I personally would not have arrived at this creative reinterpretation of the problem, but now we can see the intuition
 behind this reinterpretation.</p>
 <p>Step 1: We want to use a projection onto a linear subspace to minimize the distance between the point and the linear
-subspace <em>V</em> defined by the span of vectors <em>v</em> and <em>w</em></p>
+subspace <em>V</em> defined by the span of vectors <em>v</em> and <em>w</em>. To do this we need to have an orthogonal basis for the subspace
+we want to project on, so we compute $v&rsquo;=v-Proj_{w}(v)=v-\frac{v\cdot{w}}{w\cdot{w}}w$.</p>
+<p>Step 2: We will then compute the projection onto the linear subspace defined by <em>v&rsquo;</em> and <em>w</em>:
+$Proj_{V}(a-b)=\frac{(a-b)\cdot{w}}{w\cdot{w}}w + \frac{(a-b)\cdot{v&rsquo;}}{v&rsquo;\cdot{v&rsquo;}}v&rsquo; = cw + c&rsquo;v'$</p>
+<p>Step 3: Now we have this arbitrary projection in terms of unfamiliar terms, so we must translate it back into $v$ and $w$,
+so that we can find what parameters $t$ and $t&rsquo;$ minimize the distance between the lines. We can do this by re-writing <em>v&rsquo;</em>
+as $v-Proj_{w}(v)=v-\frac{v\cdot{w}}{w\cdot{w}}w$. After doing this we should end up with some linear combination of
+<em>v</em> and <em>w</em>. We know that the distance between lines was expressed as $(a-b)-(t&rsquo;w-tv)$, so we can find the scalars $t$ and
+$t&rsquo;$ by equating $(t&rsquo;w-tv)$ to our linear combination obtained above.</p>
+<p>Final Step: Plug $t$ and $t&rsquo;$ back into the original equations of both of the lines to get two vectors then find the
+magnitude of the vector between those two vectors.</p>
+<h2 id="chapter-8">Chapter 8</h2>
+<h3 id="multivariable-functions-level-sets-and-contour-plots">Multivariable functions, level sets, and contour plots</h3>
+<p>This is where the class begins a slight detour into multivariable calculus before ultimately finishing up the content of
+linear algebra. Keep in mind the notes for this class are supposed to encapsulate optimization in any space, so
+coupling linear algebra with a bit of multivariable calculus is a very logical thing to do.</p>
+<p>To begin we will talk about the different types of multivariable functions.</p>
+<p><strong>Definition 8.1.1:</strong>
+A scalar-valued function is a function $\mathbf{R}^n$-&gt;$R$ (that is to say, with m=1). In other words, a scalar valued function gives
+real number outputs.</p>
+<p>Generally any function which takes multiple inputs and incorporates them in a single expression is going to be a scalar
+valued function, since it will(likely) have a single 1-dimensional output.</p>
+<p><strong>Definition 8.1.7:</strong>
+A vector-valued function is a function <em>f</em>: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ with general $m \geq 1$. In other words, a
+vector valued function gives output considered as vectors in some $\mathbf{R}^m$.</p>
+<p>A vector valued function <em>f</em>: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ can be expressed in terms of $m$ scalar-valued component
+functions or coordinate functions $f_1,&hellip;,f_m:\mathbf{R}^n$-&gt;$R$, defined by the expressions</p>
+<p>$$f(x)=\begin{bmatrix}
+f_{1}(x) \\
+\vdots \\
+f_{m}(x)
+\end{bmatrix}=(f_{1}(x),&hellip;,f_{m}(x))$$</p>
+<p>(depending on whether we consider the output to be a &ldquo;vector&rdquo; or a &ldquo;point&rdquo;), with each $f_j$ a scalar-valued function.
+We can write the output of <em>f</em> on the input $x\in \mathbf{R}^n$ in at least three ways:
+$$f(x)=f(\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix})=f(x_1,&hellip;,x_n)$$,
+depending on whether we want to keep things compact, emphasize that the inputs to <em>f</em> is considered as a vector in $\mathbf{R}^n$,
+or emphasize that the output of <em>f</em> depends on <em>n</em> real-number inputs(coordinates of vector <em>x</em>).</p>
+<p>We can also compose certain compatible multivariable functions(meaning that given certain parameters, we can first
+evaluate the output of the first function, then input that output into the second function as new parameters).</p>
+<p><strong>Definition 8.2.2:</strong>
+If <em>g</em>$:\mathbf{R}^n$-&gt;$\mathbf{R}^p$ and <em>f</em>$: \mathbf{R}^p$-&gt;$\mathbf{R}^m$ are multivariable functions (note that g
+has output belonging to $\mathbf{R}^p$ on which <em>f</em> is applied), we can form a new composite function:</p>
+<p>Take an input(<em>x</em>) in $\mathbf{R}^n$; first apply <em>g</em> to it, and then apply <em>f</em>:
+$$x \in \mathbf{R}^n \leadsto^{g} \mathbf{R}^p \leadsto^{f} \mathbf{R}^m$$</p>
+<p>As a shorthand, we write this new function as $f\circ{g}$; the symbol $\circ$ is read as &ldquo;composed with.&rdquo; In symbols,
+new function is given by:</p>
+<p>$(f\circ{g})(x)$=($f$ applied to $g(x))=f(g(x))$</p>
+<p>Order of composition matters!!! If you are given <em>g</em> which goes from n=3 to p=1 and <em>f</em> which goes from p=1 to m=2:
+It works one way since 3&ndash;&gt;1&ndash;&gt;1&ndash;&gt;2 is a totally fine order of composition, but it doesn&rsquo;t work the other way since
+1&ndash;&gt;2&ndash;&gt;x&ndash;&gt;3&ndash;&gt;1. Since the intermediary vectors dimensions don&rsquo;t match up the composition is impossible.</p>
+<p>Here&rsquo;s an example of a graph of a composed function:
+<img src="/static/images/Composition.png" alt="Composed Function"></p>
+<p>Now how can we visualize these multivariable functions? Since dealing with multiple variables introduces many more
+layers of complication with visualization, we have multiple ways to think graphically about these multivariable functions.
+The first way is through an actual graph in which we plot out the inputs on separate axis and make an additional axis
+for the output. The second way we can visualize them is by looking at their contour plots, that is to say, we look at
+cross sections of the output graph.</p>
+<p><strong>Definition 8.3.1:</strong>
+The graph of $f:\mathbf{R}^n$-&gt;$R$ is the subset of $\mathbf{R}^(n+1)$ (not $\mathbf{R}^n$) defined as:</p>
+<p>Graph$(f)={(x_1,&hellip;,x_n,z) \in \mathbf{R}^{n+1}:z=f(x_1,&hellip;,x_n)}$.</p>
+<p>Here&rsquo;s a couple images to help:
+<img src="/static/images/MV_cross.png" alt="Scalar-Valued Function Graph1"></p>
+<p><img src="/static/images/MV_graph.png" alt="Scalar-Valued Function Graph2"></p>
+<p><strong>Definition 8.3.4:</strong>
+Let $f:\mathbf{R}^n$-&gt;$R$ be a function. For any $c \in R$, the <em>level set of f at level c</em>, is the set of points
+$(x_1,&hellip;,x_n) \in \mathbf{R}^n$ for which $f(x_1,&hellip;,x_n)=c$ It is also called the <em>c-level set of f</em>.</p>
+<p>If $f$ is a function $\mathbf{R}^2$-&gt;$R$ of 2 variables then a <em>contour plot</em> of $f$ is a picture in $\mathbf{R}^2$ that
+depicts the levels sets of $f$ for many different values of <em>c</em> (often with some common difference for consecutive level
+sets, such as common difference of 10, 4, 1, or 0.5).</p>
+<p>Here&rsquo;s an example of a contour plot of a function and its graph:
+<img src="/static/images/Contour+Graph.png" alt="Contour Plots"></p>
+<p>When you are given a specific set S defined in 3D space (R³) by an equation, the only functions f and h that will have S
+as their common zero level set are those functions that incorporate the exact same equation.</p>
+<p>Here&rsquo;s the reasoning behind this:</p>
+<p>The set S is defined by an equation in the form:
+S = {(x, y, z) ∈ R³ : F(x, y, z) = 0}</p>
+<p>Where F(x, y, z) is some multi-variable function of x, y, and z.</p>
+<p>For functions f and h to have S as their common zero level set, it means:
+f(x, y, z) = 0
+AND
+h(x, y, z) = 0
+must both be true exactly when F(x, y, z) = 0.</p>
+<p>In other words, the functions f and h must incorporate all the same terms and operations as the original function F that
+defines the set S.</p>
+<p>Let&rsquo;s use an example to illustrate this further:</p>
+<p>Suppose the set S is defined by the equation:
+S = {(x, y, z) ∈ R³ : x² + 3y - 2z = 0}</p>
+<p>Then the only valid functions f and h that would have S as their common zero level set would be:</p>
+<p>f(x, y, z) = x² + 3y - 2z
+h(x, y, z) = x² + 3y - 2z</p>
+<p>Any other functions, even if they share some terms with the original equation, would not result in the same zero level
+set as S.</p>
+<p>For example, a function like:
+f(x, y, z) = x² + 3y
+h(x, y, z) = -2z</p>
+<p>would not work, because their zero level sets would not coincide with the original set S.</p>
+<p>The key point is that the functions f and h must incorporate the exact same equation as the one defining the original
+set S in order for their zero level sets to perfectly match.</p>
+<p>Clean up these insights and include notes from class. Also include a few examples and images.</p>
+<h2 id="chapter-9">Chapter 9</h2>
+<h3 id="partial-derivatives-and-contour-plots">Partial derivatives and contour plots</h3>
+<p>To understand the derivatives of multivariable functions, it is useful to revisit single-variable derivatives.
+The main interpretations for the derivative in single variable calculus have been included below:</p>
+<p>(i) A basic interpretation of the derivative is that it represents the &lsquo;instantaneous rate of change&rsquo;. If we change the
+value of x slightly from x=c to something very close to that point, say c+0.00001, then the derivative provides a good
+approximation of how much $f(x)$ changes. Indeed, $f&rsquo;(c)$ is approximately the ratio of change of output to the (small)
+change in input near x=c. So if we increase c to c+0.00001, then to a good degree of approximation, the value of $f$ has
+changed from $f(c)$ to $f(c) + f&rsquo;(c)(0.00001)$. In general we can represent this small change in x as h and we can
+express the value of the expression $f(c+h)$ as $f&rsquo;(c)h$, or equivalently $f(x)\approx f(c) + f&rsquo;(c)(x-c)$ for x near c.</p>
+<p>(ii) The number $f&rsquo;(c)$ is the slope of the line tangent to the graph at the point $(c,f(c))$.</p>
+<p><strong>Limit definition of single-variable derivative:</strong>
+$$f&rsquo;(c)=\lim_{h \to 0}\frac{f(c+h)-f(c)}{h}$$</p>
+<p>Somewhat important note to think about:  It is easy to get drawn into thinking that these formulas for f′(x) for
+familiar functions f(x) are all that derivatives are, but they are simply the outcome of specific
+calculations which are ultimately deduced from the limit definition. -courtesy of the textbook :)</p>
+<p>Recall that for single-variable functions, we can use the derivative as a marker for extrema(i.e. when the derivative is
+zero, it indicates that there is a max/min since the function is neither increasing or decreasing at these points). In
+these cases we find where the first derivative is zero then we determine whether it is a max, min, or point of
+inflection using either a plug in method or by using the second derivative to se whether the function has a positive or
+negative rate of change(or 0 if its a point of inflection).</p>
+<p>That&rsquo;s enough of talking about single-variable functions.</p>
+<p>Consider a function $f(x_1,x_2)$. Just like single-variable functions we can leverage the concepts of derivatives to
+find some instantaneous rate of change for the function. Unlike single-variable functions, however, the derivative in
+this setting can have many more meanings, as there are many independent variables. Multivariable calculus uses partial
+derivatives to articulate change in a more precise way. Later on other ideas such as directional derivatives, the
+gradient, and the derivative matrix will provide more precise means to approximate the point $f(x_1,x_2)$ near (a,b)
+with a linear function.</p>
+<p>The main idea of partial derivatives is to treat multivariable functions as collections of functions of one variable,
+treating the other variables in each case as constants.</p>
+<p><strong>Definition 9.2.2:</strong>
+The <em>partial derivative of f with respect to $x_1$ at the point (a,b)</em>, denoted in any of the equivalent ways included
+below means the derivative of the function $f(x_1,b)$ at $x_1=a$.</p>
+<p>$\frac{\partial f}{\partial {x_1}}(a,b), f_{x_1}(a,b)$
+There&rsquo;s another way, but the markdown for it is just inefficient and it&rsquo;s scarcely used so I won&rsquo;t include it here.</p>
+<p>Another way to phrase it is that the partial derivative of $f$ with respect to $x_1$ at $(a,b)$ is the instantaneous
+rate of change of $f$ at the point $(a,b)$ if we only move in the $x_1$ direction (so $x_2$ is held constant, at the
+value b). The formal definition is once again as a limit of difference quotients:
+$$\frac{\partial f}{\partial {x_1}}(a,b)=\lim_{h \to 0}\frac{f(a+h,b)-f(a,b)}{h}$$.</p>
+<p>Note that this works the exact same for $x_2$ just need to hold $x_1$ constant. Actually the same applies for any $x_i$
+so long as all other $x_j$ are held constant.</p>
+<p>When computing partial derivatives think of the $x_j$&rsquo;s for $j \neq i$ as constant(don&rsquo;t input any value) and apply
+the single-variable differentiation rules in terms of $x_i$ to obtain the new function of <em>n</em> variables,
+$f_{x_i}(x_1,&hellip;,x_n)$. Then substitute for the other terms.</p>
+<p><strong>Partial derivatives discussed visually:</strong>
+Contour plots can be used to gather qualitative data about a multivariate function. We can proces information about the
+partial derivatives of a function by taking one of the variables and setting it to a constant value, then tracing out a
+path across the level sets. The frequency of crossing corresponds to the magnitude of the partial derivative and the
+sign of the second derivative(if the contour labels are increasing at a positive or negative rate.</p>
+<p>Here are a few examples of contour plots which we can look at to discuss more of the qualities of these multivariable
+functions:
+<img src="/static/images/Contour_plot1.png" alt="Contour Plot1"></p>
+<p><img src="/static/images/Graph+Contour.jpeg" alt="Graph and Contour"></p>
+<p><strong>Formally:</strong>
+Visualize $F(x,y)$ as the height above $(x,y)$ on the surface of the graph $z=F(x,y)$ on the curve in the surface graph
+$z=F(x,y)$, where x is the east-west coordinate and yu is the north-south coordinate. Then:</p>
+<p>-$\frac{\partial F}{\partial {x}}(a,b)$ equals the slope experienced by someone walking on the
+surface just as they go past the point $(a,b)$ from west to east.</p>
+<p>-$\frac{\partial F}{\partial {y}}(a,b)$ equals the slope experienced by someone walking on the
+surface just as they go past the point $(a,b)$ from south to north.</p>
+<p>On a contour plot of the function $F(x,y)$, the partial derivatives can be interpreted as follows:</p>
+<p>-The sign of $\frac{\partial F}{\partial {x}}(a,b)$ tells us whether the labels of the contours (which represent the
+values of $F$) are <em>increasing</em> or <em>decreasing</em> as we walk through $(a,b)$ form west to east.</p>
+<p>-The sign of $\frac{\partial F}{\partial {y}}(a,b)$ tells us whether the values of $F$ on the contours are <em>increasing</em>
+or <em>decreasing</em> as we walk through $(a,b)$ from south to north.</p>
+<p>-If $\frac{\partial F}{\partial {x}}(a_1,b_1) \geq \frac{\partial F}{\partial {x}}(a_2,b_2) \geq 0$ then in the
+x-direction the slope at $(a_1,b_1)$ is <em>steeper</em> than the slope at $(a_2,b_2)$, so the contours (when shown for uniform
+increments in $F$-values) are spaced closer together as we move east across $(a_1,b_1)$ than they are as we move east
+across $(a_2,b_2)$. There is a corresponding statement for negative x-partial derivatives(still moving east). Same could
+also be said for $\frac{\partial F}{\partial {y}}$ moving north.</p>
+<p>We can practice these concepts of partial derivatives on contour plots here:
+<img src="/static/images/Contour_plot2.jpeg" alt="Contour Plot 2"></p>
+<p><strong>Definition 9.6.3:</strong>
+For a function $f(x_1,&hellip;,x_n)$ of <em>n</em> variables that is differentiable in each $x_i$ separately, the second partial
+derivatives are defined to be:</p>
+<p>$\frac{\partial^2 F}{\partial {x_i}\partial {x_j}}$=$x_i$-partial derivative of $\frac{\partial F}{\partial {x_j}}$
+(when j=i it is denoted $\frac{\partial^2 F}{\partial {x_i}^2}$)</p>
+<p><strong>Theorem 9.6.4:</strong>
+(Clairaut-Schwarz). Consider a function $f(x_1,&hellip;,x_n)$ that is continuous, and for $1 \geq i,j \leq n$ suppose that
+the partial derivatives $\frac{\partial F}{\partial {x_i}}$ and $\frac{\partial F}{\partial {x_j}}$ as well as the
+second partial derivatives $\frac{\partial^2 F}{\partial {x_i}\partial {x_j}}$ and $\frac{\partial^2 F}{\partial {x_j}\partial {x_i}}$
+exist and are continuous. Then the order of applying $\frac{\partial}{\partial{x_i}}$ and $\frac{\partial}{\partial{x_j}}$
+to $f$ doesn&rsquo;t matter:</p>
+<p>$\frac{\partial^2 F}{\partial {x_i}\partial {x_j}} = \frac{\partial^2 F}{\partial {x_j}\partial {x_i}}$</p>
+<h2 id="chapter-10">Chapter 10</h2>
+<h3 id="maxima-minima-and-critical-points">Maxima, minima, and critical points</h3>
+<p>With functions of multiple variables we need to define what it means for a function f: Rn-&gt;R to have a local maximum or
+a local minimum. We can generalize this but for now I will include the definition for a function of 2 variables.</p>
+<p><strong>Definition 10.2.1:</strong>
+A function $f(x,y)$ achieves a local maximum at (a,b) if $f(a,b) \geq f(x,y)$ for all (x,y) which are sufficiently near
+(a,b). (i.e. moving in any direction will decrease f)</p>
+<p>A function $f(x,y)$ achieves a local minimum at (a,b) if $f(a,b) \leq f(x,y)$ for all (x,y) which are sufficiently near
+(a,b). (i.e. moving in any direction will increase f)</p>
+<p><strong>Theorem 10.2.2:</strong>
+Suppose that a point $a \in \mathbf{R}^n$ is either a local maximum or a local maximum of $f$. Then all partials
+derivatives of $f$ vanish at $x=a$; i.e., $\frac{\partial F}{\partial {x_i}}(a)=0$ for $1 \leq i \leq n$.</p>
+<p><strong>Definition 10.2.3:</strong>
+If $\frac{\partial F}{\partial {x_i}}(a)=0$ for all $1 \leq i \leq n$ then we say <em>a</em> is a critical point for $f$. In
+particular, every local maximum and every local minimum of $f$: $\mathbf{R}^n$-&gt;$R$ is a critical point.</p>
+<p>Include some examples here</p>
+<p>We emphasize that if a is a critical point of $f$: $\mathbf{R}^n$-&gt;$R$, then it may be neither a local maximum nor a
+local minimum. In fact, for functions of two or more variables there is a new phenomenon:</p>
+<p><strong>Definition 10.2.10:</strong>
+A critical point $a \in \mathbf{R}^n$ of $\mathbf{R}^n$-&gt;$R$ is a saddle point if (i) as we move away from $a$ along
+some line, then $f$ increases nearby, so $a$ is a local minimum along that line, and (ii) as we move away from $a$ along
+some other line then $f$ decreases, so $a$ is a local maximum along that line.</p>
+<p>Such behavior can happen with n variables when n &gt; 1 because then there are “more lines” in Rn
+through a point along which we can move away from the point: in R there is only one line through a point,
+but in R2 there are many lines through a point (e.g., not only horizontal, but also vertical, diagonal, etc.),
+let alone in Rn for n&gt;2. This is a genuinely multivariable phenomenon.</p>
+<p>Example problem</p>
+<p><strong>Extrema on Boundaries:</strong>
+Oftentimes we will want to find the maximum, minimum points of a function over a restricted domain. In these cases we
+will have to evaluate the extrema of the function computed by solving $f_x=f_y=0$ along with solving what the maximum
+and minimum points are of the curves(in 3 space) defined by the intersection of $f$ with the boundaries. For these cases
+we simply plug in the restricting equations(of the boundary) into $f$ for each boundary side/curve, then we find what
+the extrema are of that restricted function. Then we compare these results with the local extrema.</p>
+<p><strong>Theorem 10.4.6:</strong>
+For a function $f$: $\mathbf{R}^n$-&gt;$R$ and a region <em>D</em> inside $\mathbf{R}^n$, suppose the function $f$: <em>D</em>-&gt;$R$
+considered on <em>D</em> has a local extremum at a point $a \in D$ (i.e. $f(x) \leq f(a)$ for all $x \in D$ near <em>a</em>, or
+$f(x) \geq f(a)$ for all $x \in D$ near <em>a</em>).</p>
+<p>The point $a$ must be a critical point of $f$ when $a$ is in the interior of <em>D</em>. In particular, any local extrema of
+$f$ : $D$-&gt;$R$ either is a critical point on the interior of <em>D</em> or is a boundary point of <em>D</em>.</p>
+<p>Sometimes these systems of equations that we set up for solving for extrema can be extremely challenging. While we will
+learn techniques later that will help reduce the difficulty of these problems for now I will offer a few tips.</p>
+<p>(i) This is obvious but start with the simplest of your equations. If your condition for $f_x$ looks easy to factor and
+find values that give $f_x=0$ then start with that!</p>
+<p>(ii) If the equations that give the conditions for the partials to be equal to zero are linear, then just treat it
+as any other linear system of equations solved earlier.</p>
+<p>(iii) Oftentimes there will be many variables to solve for. In these cases trying to work with substitution isn&rsquo;t a bad
+idea.</p>
+<p>(iii) Once you have some conditions that must be met for certain partials to be zero, start checking how those
+conditions restrict other equations. MAKE SURE TO CHECK ALL CONDITIONS! Sometimes there will be redundancy, but checking
+is better than forgetting a critical point.</p>
+<p>(iv) This more or less goes with what I just stated but there will be paths created by each restriction. FOLLOW EVERY
+SINGLE PATH!</p>
+<p>(v) Once you obtain all the critical points&ndash;just double check they make sense.</p>
+<h2 id="chapter-11">Chapter 11</h2>
+<h3 id="gradients-local-approximations-and-gradient-descent">Gradients, local approximations, and gradient descent!</h3>
+<p>We now know how to approximate the value of a multivariable function and how to find the
+extrema, all using partial derivatives. But now we seek to generalize the idea of derivatives of multivariable
+functions. We can do this by essentially packaging all the partial derivative information into a vector valued function
+called the gradient(denoted $\nabla f$).</p>
+<p>*Little note We will sometimes write the inputs as vectors; e.g. when n = 2
+think of $f$ as a function of the x,y vector.</p>
+<p><strong>Definition 11.1.1:</strong>
+Consider a function $f$: $\mathbf{R}^n$-&gt;$R$.</p>
+<p>The gradient of $f$ is defined to be: $$\nabla f= \begin{bmatrix}
+\frac{\partial f}{\partial {x_1}} \\
+\frac{\partial f}{\partial {x_2}} \\
+\vdots \\
+\frac{\partial f}{\partial {x_n}}
+\end{bmatrix}
+$$.</p>
+<p>Note that the gradient is an n-vector. For $x$ near $a \in \mathbf{R}^n$, the linear approximation to $f$ is
+$f(x) \approx f(a) + ((\nabla f)(a)) \cdot (x-a)$.</p>
+<p>This looks like the single variable case, but now we account for each variable and evaluate using the dot product to
+sum the products of each partial derivative with their respective small change $(x_i-a_i)$.</p>
+<p>Note that the approximation is very accurate when hand kare very small.</p>
+<p><strong>Theorem 11.2.1:</strong>
+Let $f$: $\mathbf{R}^2$-&gt;$R$ be a scalar valued function, and suppose $(\nabla f)(a,b) \neq 0$.</p>
+<p>(i)The gradient $(\nabla f)(a,b)$ is perpendicular to the level set of $f$ that goes through $(a,b)$. It points in the
+direction of maximal increase for $f(x,y)$ for $(x,y)$ moving away from $(a,b)$. The following figure demonstrates this
+with the function $f(x,y)=xy-x$:
+<img src="/static/images/gradient_lvlset.png" alt="Maximal Increase"></p>
+<p>(ii) The equation $(\nabla f)(a,b) \cdot \begin{bmatrix}
+x-a \\
+y-b
+\end{bmatrix}=0$ in the $(x,y)$ plane is the line tangent to the curve in the contour plot of $f(x,y$
+through $(x,y)=(a,b)$. Explicitly, the equation of this line is $f_x(a,b)(x-a)+f_y(a,b)(y-b)=0$.</p>
+<p><strong>Theorem 11.2.2:</strong>
+For a scalar valued function $f$: $\mathbf{R}^3$-&gt;$R$ and a point <em>a</em> for which $(\nabla f)(a) \neq 0$, the gradient
+vector is perpendicular to the plane tangent to the level set opf $f$ through <em>a</em>. In particular, this tangent plane has
+the equation $(\nabla f)(a_1,a_2,a_3) \cdot \begin{bmatrix}
+x-a_1 \\
+y-a_2 \\
+z-a_3
+\end{bmatrix}=0$.</p>
+<p>Include some examples if time is provided</p>
+<p><strong>Gradient Descent:</strong>
+The main reason I&rsquo;m interested in studying multivariable calculus is to optimize functions of n variables. Realistically
+if we were to set up such a problem for large n, we couldn&rsquo;t really hope to find an exact solution, however with the
+help of gradient descent we can get a very good numerical approximation. The textbook has a really great analogy that
+I&rsquo;ll include here which helps to explain the process of gradient descent.</p>
+<p>&ldquo;Imagine that a raindrop falls on a hill. It will head to the bottom &ndash; water always finds the lowest elevation. Or at
+the very least it will find a local minimum: it might not find the bottom of the hill, but it will find a lake halfway
+down the hull, perhaps. The raindrop certainly doesn&rsquo;t know anything about the geography of the hill. However, at every
+moment, it simply &lsquo;chooses&rsquo; to roll in the steepest possible direction. It is not only the raindrops that find local
+minima. Physical systems find energy minima, and they do so by moving in the &lsquo;direction&rsquo; where potential energy
+decreases the most. Essentially, to find the minimum of a function, travel in the direction in which $f$ decreases the
+fastest. And do the opposite to find it&rsquo;s maximum.&rdquo;</p>
+<p>But how do we find the direction of maximum increase or decrease?</p>
+<p>Essentially we want to find the vector, that when we travel on $f$ in its direction, $f$&rsquo;s value increases/decreases
+the most. To find how much $f$ changes in a particular direction, all we have to do is find $(\nabla f) \cdot v$ where
+$v$ is a unit vector. This just sums up how much $f$ changes when it travels a certain amount
+a, b (components of $v$&ndash;just using \mathbf{R}^2 here for simplicity) in each direction.</p>
+<p>To test how fast $f$ is increasing or decreasing in the direction of $v$ we use local approximation:
+$f(a+tv) \approx f(a) + (\nabla f)(a) \cdot (tv) = f(a) + t(\nabla f)(a) \cdot v$.
+This says that if we move a small distance $|t|$ in the direction $v$ for $t&gt;0$ and in the direction of $-v$ for $t&lt;0$
+then the change in $f$ is $\approx t((\nabla f)(a)\cdot v)$, whose rate of change with respect to $t$ is
+$(\nabla f)(a) \cdot v$.</p>
+<p>Now we can use geometry to chose the unit vector $v$ such that this change with respect to $t$ is largest. Recall the
+dot product formula but apply our new vectors: $(\nabla f)(a)=||(\nabla f)(a)||||v||\cos{\theta}$. Clearly the dot
+product, which represents the rate of change, is most positive when the angle between the vectors is 0, and most
+negative when the angle between the vectors is 180. This provides us with the following theorem:</p>
+<p><strong>Theorem 11.3.2:</strong>
+Let $f$: $\mathbf{R}^2$-&gt;$R$ be a scalar valued function and $a \in \mathbf{R}^n$ a point where the gradient is nonzero.</p>
+<p>The gradient at a, or rather the associated unit vector $(\nabla f)(a)/||(\nabla)(a)||$, is the direction in which $f$
+increases most rapidly, and its negative is the direction in which $f$ decreases most rapidly at $a$.</p>
+<p>To demonstrate this process I have just provided the following example from the text:</p>
+<p><strong>Example 11.3.5:</strong>
+Let us find the minimum of $f(x,y)=x^2-3xy+3y^2+5y+2x$.</p>
+<p>First, we find the gradientL: $(\nabla f)(x,y)=\begin{bmatrix}
+2x - 3y + 2 \\
+-3x + 6y + 5
+\end{bmatrix}$</p>
+<p>We can now pick an arbitrary point on $f$ for $a$, take $(0,0)$. Then we will move in the direction of the negative
+gradient: $a+t(\nabla f)(a)$ for some $t&lt;0$ with small absolute value. Basically, we move in the direction of the
+negative gradient with magnitude $|t|$ and the length $||(\nabla f)(a)||$ to tell us how far we have moved.</p>
+<p>Now we pick some arbitrary $t$, say $t=-0.1$.</p>
+<p>Finally, we evaluate the above expression, keeping t constant and adjusting $a$&ndash;just sequentially adding the vector
+which indicates the direction of maximum decrease until that vector is 0, or close to it.</p>
+<p><img src="/static/images/Gradient_descent.png" alt="Gradient Descent"></p>
+<p>Notice we are gradually approaching some value, if we repeat this a hundred or a thousand times, we will have a very accurate
+approximation of $b \approx (-8.99, -5.33)$. To verify this we can solve the system of equations created by our partial
+derivatives&ndash;in this case we find that the minimum is at $(-9, 5\frac{1}{3})$. We can verify it is the minimum, and not
+just a critical point by using the multivariable second derivative test.</p>
+<h2 id="chapter-12">Chapter 12</h2>
+<h3 id="constrained-optimization-via-lagrange-multipliers">Constrained optimization via Lagrange multipliers</h3>
+<p>We now discuss how to maximize or minimize a multivariable function subject to a constraint. We have discussed finding
+maximums and minimums by looking at where the partial derivatives of functions are negative, and we have also found
+extrema through traveling incrementally in the direction of the gradient(gradient descent), but now we discuss how to
+optimize subject to a constraint using gradients and an auxiliary constant: $\lambda$</p>
+<p>Consider the unit sphere $S$ centered at the origin in $\mathbf{R}^3$, and $f(x,y,z)=z$. The sphere $S$ is defined by
+$x^2+y^2+z^2=1$, so for $g(x,y,x)=x^2+y^2+z^2$ finding the extrema for $z$ on the sphere $s$ is the same as finding the
+points in the region $g=1$ at which $f$ attains maximal or minimal values.</p>
+<p>By staring at the sphere $S$, we see by inspection that $f$ attains its maximal value on $S$ at the north pole $p=(0,0,1)$
+and attains its minimal value at $-p$. These two points are not local extrema for $f$, rather that subject to the
+constraining sphere, they are the maximal/minimal values that $f$ attains. For tiny $t&gt;0$, at the points (0,0,1+t) close
+to $p$ the value of $f$ there is bigger than the maximal value $f(p)$, and similar logic follows for $(0,0,-1-t)$.
+*Basically the &ldquo;maximum&rdquo; subject to the constraint is hardly ever a maximum of $f$ globally/locally so there is no need
+for $\nabla f$ to vanish there.</p>
+<p>There is something interesting, however, about the gradient of $f$ at the points where $f$ attains an extreme value on
+$S$.</p>
+<p>If we look at the gradient of $g$ included below and compare that with the gradient of $f$, then we find that the only
+points for which these vectors (remember gradients produce a vector output) coincide are the maximal/minimal values of
+$f$ subject to the constraint function $g$. Essentially the gradient of $f$ is some scalar multiple of the gradient of
+$g$.</p>
+<p><img src="/static/images/Lagrange.png" alt="Lagrange"></p>
+<p>The reason why these vectors coincide only at the extreme values of $f$ subject to the constraint has to do with the
+level curves of both, and the properties of the gradient related to level curves.</p>
+<p><img src="/static/images/Lagrange_lvl.png" alt="Lagrange Level Set"></p>
+<p>We can reinterpret the level curves&rsquo; tangency as the two functions having the same gradient at $P_0$, since the gradient
+at that point will always be normal to the tangent line of the level curve.</p>
+<p>If we imagine all the level curves of $f$, and we plot out the $g(x,y)=c$ it makes sense that the only points where $f$
+is going to be maximized subject to the constraint is going to be where the curves coincide with $g$. At these points,
+when the gradients coincide, it is impossible to increase/decrease $f$ further without violating the constraint.</p>
+<p><img src="/static/images/Lagrange_lvl2.png" alt="More Lagrange Level Sets"></p>
+<p><strong>Theorem 12.2.1:</strong>
+Suppose $f$: $\mathbf{R}^n$-&gt;$R$ and $g$: $\mathbf{R}^n$-&gt;$R$ are functions, and consider the problem of finding a local
+maximum(or local minimum) of $f$ on the region where $g(x)=c$. If a local extrema for $f$ on the constraint region
+occurs at $a$ then either $(\nabla g)(a)=0$ or $(\nabla f)(a)=\lambda(\nabla g)(a)$ for some scalar $\lambda$ that may
+depend on $a$.</p>
+<p>We do not know $\lambda$; but we can solve for it using the system of equations that we obtain above.</p>
+<p>It can be the case that there are no constrained <em>global</em> extrema. If $f=xy$ and we restrict it with some equation
+$y=x^2-3$ then we have $f(x,x^2-3)=x^3-x$&ndash;which has no global minimum. For actual application questions in physics and
+economics, etc. we have non-mathematical reasons to know where there is a maximum or minimum on the constraint region.</p>
+<p>When $(\nabla g)(a)=0$ we must check the point $a$ and make sure that satisfies the constraint equation, but if it does
+then it is a perfectly valid point as an extrema of $f$.</p>
+<p><strong>General Strategy:</strong>
+To start find the extrema of $f$ subject to a constraint, the following sequence of steps will generally lead to the
+answer.</p>
+<p>(i) Find what the functions $g$ and $f$ are and find their gradients.</p>
+<p>(ii) Manipulate the system of equations obtained by setting the gradients equal to each other, by either a) solving for
+lambda, or b), canceling lambda and writing the variables in terms of eachother.</p>
+<p>(iii) Plug this new equality into the constraint equation to find specific numerical values for the variables. Check
+each possible variable equality and value!</p>
+<p>(iv) Check the values of these points and compare.</p>
+<p>(v) Be careful about accidentally canceling variables that can give you more solutions. Also beware of situations in
+which there is no global max/min.</p>
+<h2 id="chapter-13">Chapter 13</h2>
+<h3 id="linear-functions-matrices-and-the-derivative-matrix">Linear functions, matrices, and the derivative matrix</h3>
+<p>Here we will discuss what matrices are, what they represent, and what linear functions are. In subsequent sections I&rsquo;ll
+go over what linear transformations are, how matrices are relevant to them, and many other applications of matrices.</p>
+<p>We know how to express the notion of the derivative of some scalar valued function as $\nabla f$, and we can extend that
+to a vector-valued function as $\nabla f_i$ for each $f_i$ component function. In this section I&rsquo;ll describe how to
+nicely package this into a form that is easily readable and intuitive.</p>
+<p>Recall that for a vector valued function $f$: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$, and $x \in \mathbf{R}^n$ there is the form
+$$f(x)=\begin{bmatrix}
+f_1(x) \\
+f_2(x) \\
+\vdots \\
+f_n(x)
+\end{bmatrix}$$</p>
+<p>To approximate the value of a vector valued function such as $f$ at $x$ near $a$ we would need to, for each $i$, find:
+$f_i(a)+((\nabla f_i)(a))\cdot{(x_1-a_1, x_2-a_2, &hellip;, x_n-a_n)}$. If we consider $n=3$ and $f(x,y,z)$ this already gets
+very complicated:
+$$\begin{bmatrix}
+f_1(x,y,z) \\
+f_1(x,y,z) \\
+f_1(x,y,z)
+\end{bmatrix} \approx f(a,b,c) + \begin{bmatrix}
+\frac{\partial f_1}{\partial x}(a,b,c)(x-a) +  \frac{\partial f_1}{\partial y}(a,b,c)(y-b) + \frac{\partial f_1}{\partial z}(a,b,c)(z-c) \\
+\frac{\partial f_2}{\partial x}(a,b,c)(x-a) +  \frac{\partial f_2}{\partial y}(a,b,c)(y-b) + \frac{\partial f_2}{\partial z}(a,b,c)(z-c) \\
+\frac{\partial f_3}{\partial x}(a,b,c)(x-a) +  \frac{\partial f_3}{\partial y}(a,b,c)(y-b) + \frac{\partial f_3}{\partial z}(a,b,c)(z-c)
+\end{bmatrix}$$</p>
+<p>We will discuss a shortform of writing this later, but for now we will discuss some classes of scalar valued functions
+that will become important later.</p>
+<p><strong>Definition 13.2.1:</strong>
+A scalar valued function $f$: $\mathbf{R}^n$-&gt;$R$ is called</p>
+<p>-affine if it has the form $f(x_1,&hellip;,x_n)=a_1x_1+a_2x_2+&hellip;+a_nx_n+b$ for some numbers $a_1,&hellip;,a_n,b$ (s0 $b=f(0)$).</p>
+<p>-Linear if it has the form $f(x_1,&hellip;,x_n)=a_1x_1+a_2x_2+&hellip;+a_nx_n$ for some numbers $a_1,&hellip;,a_n$; i.e. it is affine
+with $b=0$, or equivalently with $f(0)=0$.</p>
+<p>A vector valued function $f$: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ (so $f(x)=(f_1(x),&hellip;,f_m(x))$) is called::</p>
+<p>-affine if each of its component functions $f_i$ : $\mathbf{R}^n$-&gt;$R$ is affine.</p>
+<p>-linear if each of its component functions $f_i$ : $\mathbf{R}^n$-&gt;$R$ is linear.</p>
+<p>i.e. linear: $$f(\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix})=\begin{bmatrix}
+ax + by + cz \\
+dx + ey + fz \\
+gx + hy + iz
+\end{bmatrix}$$</p>
+<p><strong>Definition 13.3.1:</strong>
+An $m x n$ matrix is a rectangular array $A$ of numbers presented like this:
+$$\begin{bmatrix}
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+\end{bmatrix}
+$$</p>
+<p>The collection of entries $[a_{i,1}, a_{i,2}, \cdots a_{i,n}]$ along the $i$th layer horizontal
+(with $i=1$ along the top side) is called the $i$th row, and the collection of entries $\begin{bmatrix}
+a_{1,j} \\
+a_{2,j} \\
+\vdots \\
+a_{m,j}
+\end{bmatrix}$ along the $j$th vertical layer (with $j=1$ along the left side) is called the $j$th column.</p>
+<p>The entry at the $i$th row and $j$th column is denoted the $ij$ entry.</p>
+<p>For a linear vector valued function, we denote the matrix-vector product(inputting a vector into our vector valued
+function) as such:</p>
+<p><strong>Definition 13.3.4:</strong>
+If $A$ is an $m x n$ matrix, and $x \in \mathbf{R}^n$, the matrix-vector product $Ax \in \mathbf{R}^n$ is defined as:
+$$\begin{bmatrix}
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+\end{bmatrix} \begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}=\begin{bmatrix}
+a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n \\
+a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n \\
+\vdots \\
+a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n
+\end{bmatrix}$$</p>
+<p>In other words, if we write $r_1, &hellip;, r_m$ for the rows of $A$(so these are <em>n</em>-vectors), then
+$$Ax=\begin{bmatrix}
+r_1 \cdot{x} \\
+r_2 \cdot{x} \\
+\vdots \\
+r_m \cdot{x}
+\end{bmatrix}
+$$</p>
+<p>!! If $A$ is an $m x n$ matrix and $x$ is a $d$-vector with $d \neq n$ then the matrix-vector product $Ax$ is not
+defined!! This makes sense since we need there to be $n$ components of the vector in order to dot it with the $n$ columns
+of the matrix.</p>
+<p><strong>Proposition 13.3.8:</strong>
+A function $f$: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ is linear precisely when $f(x)=Ax$ for an $m x n$ matrix $A$.</p>
+<p>This just rephrases the definition of a linear function. In this way, an $m x n$ matrix $A$ is a shorthand way of
+encoding a linear function from $\mathbf{R}^n$-&gt;$\mathbf{R}^m$</p>
+<p><strong>Theorem 13.4.1:</strong>
+If $c_1,c_2,&hellip;,c_n$ are the columns of $A$ (so viewed as vectors in $\mathbf{R}^m$), which is to say
+$$A=[c_1, c_2, &hellip;, c_n]$$, then $$A\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}=x_1c_1+x_2c_2+&hellip;+x_nc_n \in \mathbf{R}^m$$.</p>
+<p>In particular, the matrix vector product is a specific linear combination of the columns of the matrix; the vector tells
+us which linear combination to take(i.e. it records the coefficients in the linear combination)</p>
+<p>As we write down the columns $c_1, c_2, &hellip;, c_n$ from left to right, each appears in the linear combination multiplied
+against a scalar that varies through the entries $x_i$ in the vector part of the matrix-vector product read top-down.</p>
+<p><strong>Theorem 13.4.5:</strong>
+For a linear function $f(x) = Ax$, in the matrix $A$ has as its respective columns $f(e_1), f(e_2),&hellip;,f(e_n)$ are the
+&ldquo;coordinate vectors.&rdquo; In other words, the matrix vector product $Ae_j$ is the $j$th column of the matrix $A$. In
+particular, we can reconstruct the matrix $A$ from the function $f(x)=Ax$.</p>
+<p>Now we return to the shorthand form of derivatives of vector valued functions.</p>
+<p><strong>Definition 13.5.1:</strong>
+Let $f$: $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ be a vector valued function $f(x)=\begin{bmatrix}
+f_1(x) \\
+\vdots \\
+f_m(x)
+\end{bmatrix}$ with scalar valued components $f_1,&hellip;,f_m$: $\mathbf{R}^n$-&gt;$R$. The derivative matrix of $f$ at point
+$a \in \mathbf{R}^n$ is the $m x n$ matrix:
+$$(Df)(a)=\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_2}{\partial x_n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial f_m}{\partial x_1} &amp; \frac{\partial f_m}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}$$
+with all partial derivatives $\frac{\partial f_i}{\partial x_j}$ evaluated at the point $a$. (Also called the Jacobian
+matrix).</p>
+<p>For a scalar valued function $f$: $\mathbf{R}^n$-&gt;$R$ (m=1), the derivative matrix will be flipped so that each partial
+derivative is one of the component outputs for the n-vector.</p>
+<p><strong>Theorem 13.5.8:</strong>
+The best linear approximation to $f$ : $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ at $a \in \mathbf{R}^n$ is given by the $m x n$
+derivative matrix $Df(a)$: we have the optimal approximation of m-vectors:
+$$f(x) \approx f(a) + ((Df(a)))(x-a)$$</p>
+<p>Add some examples</p>
+<h2 id="chapter-14">Chapter 14</h2>
+<h3 id="linear-transformations-and-matrix-multiplication">Linear transformations and matrix multiplication</h3>
+<p>So we know what matrices are, what their product with vectors look like, and some ways we can package some concepts such
+as the derivative within a matrix; but now we look into what they actually represent and some other ways we can work
+with them (which will become very important in later chapters).</p>
+<p>Matrices encode the information necessary for linear transformations, which are ways of manipulating space in such a way
+that we maintain properties of linearity. I will elaborate on this in a later definition but for now this is sufficient.
+While this way of describing what matrices do is certainly correct, I find the way that 3blue1brown puts it to be far
+more insightful. Just think of the columns of the matrix $A$ as encoding where the basis vectors
+$(e_1,e_2,&hellip;,e_n) \in \mathbf{R}^n$ land in this new transformation of space. Thinking in terms of physics terms, we
+can interpret it as where the $\hat{i}, \hat{j}, \hat{k}$ vectors land in our new space. In this way we can think of any
+vector in our original space expressed by some combination of $\hat{i}, \hat{j}, \hat{k}$ in terms of $\hat{i}&rsquo;, \hat{j}&rsquo;, \hat{k}&rsquo;$
+where $\hat{i}&rsquo;, \hat{j}&rsquo;, \hat{k}&rsquo;$ are given by the columns of the matrix.</p>
+<p>Thinking of it this way, the properties of linearity become quite obvious.</p>
+<ol>
+<li>
+<p>the matrix vector product can be extended to scalars, by simply factoring out the scalar from the product and applied
+to the resulting vector.</p>
+</li>
+<li>
+<p>the matrix vector product can be applied to vectors separately, and since the output vectors are essentially linear
+combinations of the same vectors(altered basis vectors), any vectors produced by combining these vectors will lie in the
+same linear subspace.</p>
+</li>
+</ol>
+<p><strong>Definition 14.1.1:</strong>
+A function <em>f</em> : $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ is called:</p>
+<p>-a linear function, or a linear transformation, if there is an $mxn$ matrix $A$ for which $f(x)=Ax$ for all vectors
+$x \in \mathbf{R}^n$ (so the $j$th column of $A$ is $Ae_j=f(e_j)$)</p>
+<p>-an affine function, or an affine transformation, if there is an $mxn$ matrix $A$ and a vector $b \in \mathbf{R}^m$ for
+which $f(x) = Ax + b$ for all vectors $x \in \mathbf{R}^n$</p>
+<p><strong>Linearity Principle:</strong>
+for $c_1,c_2 \in R$ and $v_1,v_2 \in R^2$ we have $f(c_1v_1 + c_2v_2)=c_1f(v_1) + c_2f(v_2)$.</p>
+<p><strong>Tiling Principle:</strong> <em>f</em>
+transforms the tiling of $R^2$ by copies of S into a tiling of $R^2$ by copies of $f(S)$</p>
+<p><img src="/static/images/Linear_trans.png" alt="Transformation of Space"></p>
+<p><strong>Theorem 14.2.1:</strong>
+A function <em>g</em> : $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ is linear precisely when it respects the vector operations:
+$$g(cx)=cg(x)$$, $$g(x+y) = g(x) + g(y)$$
+for all scalars $c \in \mathbf{R}^n$.</p>
+<p>If <em>g</em> : $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ and <em>h</em> : $\mathbf{R}^p$-&gt;$\mathbf{R}^n$ are linear, then so is the composition
+$g \circ{h}$ : $\mathbf{R}^p$-&gt;$\mathbf{R}^m$.</p>
+<p>Such operations only work for linear functions, which is part of the reason why linear functions are far more common
+than their affine counterparts.</p>
+<p>Include example 14.2.2</p>
+<p>Now we introduce the idea of matrix multiplication. This may sound somewhat daunting, especially for large $m$ and $n$,
+but if we just think about what we are doing conceptually, it will make perfect sense, and it will even help to explain
+some of the interesting properties of matrix multiplication.</p>
+<p>When we multiply one matrix by another what we are doing is observing an initial linear transformation of $\mathbf{R}^n$
+expressed by the $m$-vectors given by the columns of the matrix which represent where each basis vector of $\mathbf{R}^n$
+goes. Then we take these transformed basis vectors for some space in $\mathbf{R}^m$, and we treat them as we did the
+original basis vectors, computing the matrix vector product to see where they land in the newly transformed space.</p>
+<p>Formally we have the following:</p>
+<p><strong>Definition 14.3.1:</strong>
+Let $A$ be an $mxn$ matrix and $B$ be an $nxp$ matrix as follows:
+$$\begin{bmatrix}
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+\end{bmatrix}$$, $$\begin{bmatrix}
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; b_{1,p} \\
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; b_{2,p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+b_{n,1} &amp; b_{n,2} &amp; \cdots &amp; b_{n,p}
+\end{bmatrix}$$</p>
+<p>Let $T_A$ : $\mathbf{R}^n$-&gt;$\mathbf{R}^m$ and $T_B$ : $\mathbf{R}^p$-&gt;$\mathbf{R}^n$ be the linear transformations
+with respective matrices $A$ and $B$ (i.e, $T_a(x)=Ax$ for $x \in \mathbf{R}^n$ , and $T_a(y)=By$ for $y \in \mathbf{R}^p$),
+so the composition $T_A \circ{T_B}$: $\mathbf{R}^p$-&gt;$\mathbf{R}^m$ is a linear transformation. This transformation is
+denoted $AB$.</p>
+<p><strong>Theorem 14.3.2:</strong>
+The entries of $AB$ are the dot products of rows of $A$ with columns of B: if we write
+$$A=\begin{bmatrix}
+&mdash;-a_1&mdash;- \\
+&mdash;-a_2&mdash;- \\
+\vdots \\
+&mdash;-a_m&mdash;-
+\end{bmatrix}$$, $$[b_1, b_2, \cdots, b_p]$$
+with rows $a_i \in \mathbf{R}^n$ and columns $b_j \in \mathbf{R}^n$, then we have
+$$\begin{bmatrix}
+a_1 \cdot{b_1} &amp; a_1 \cdot{b_2} &amp; \cdots &amp; a_1 \cdot{b_p} \\
+a_2 \cdot{b_1} &amp; a_2 \cdot{b_2} &amp; \cdots &amp; a_2 \cdot{b_p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_m \cdot{b_1} &amp; a_2 \cdot{b_2} &amp; \cdots &amp; a_m \cdot{b_p}
+\end{bmatrix}=[Ab_1, Ab_2, \cdots, Ab_p]$$.</p>
+<p><em>$AB \neq BA$</em></p>
+<p>$A(BC)=(AB)C$ This makes sense intuitively when we think about matrices and matrix multiplication as applying successive
+transformations. Like of course applying one transformation, then another, then another is the same as applying that
+transformation, then the same consecutive transformations.</p>
+<p><strong>Proposition 14.3.7:</strong>
+For $nxn$ diagonal matrices $A$ and $B$, the product matrix $AB$ is also diagonal and is obtained by multiplying the
+corresponding entries as such $a_{1,1}b_{1,1}, a_{2,2}b_{2,2}, &hellip;, a_{n,n}b_{n,n}$:
+$$\begin{bmatrix}
+a_{1,1}b_{1,1} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; a_{2,2}b_{2,2} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; a_{n,n}b_{n,n}
+\end{bmatrix}$$</p>
+<p>In particular, $AB=BA$ for these matrices since $a_ib_i=b_ia_i$ for every $i$.</p>
+<p><strong>Rotations in $R^2$ and $R^3$:</strong>
+In $R^2$ we have a counterclockwise rotation around the origin by $\theta$ as:
+$$A_{\theta}=\begin{bmatrix}
+\cos{\theta} &amp; -\sin{\theta} \\
+\sin{\theta} &amp; \cos{\theta}
+\end{bmatrix}$$</p>
+<p>In $R^3$ we have the rotation by an angle $\theta$ counterclockwise around the $y-axis$ as:
+$$R_y(\theta)=\begin{bmatrix}
+\cos{\theta} &amp; 0 &amp; \sin{\theta} \\
+0 &amp; 1 &amp; 0 \\
+-\sin{\theta} &amp; 0 &amp; \cos{\theta}
+\end{bmatrix}$$</p>
+<p><strong>Other Random Note:</strong>
+Any 3 x 3 matrix whose effect preserves lengths and angles has orthonormal columns.</p>
+<h2 id="chapter-15">Chapter 15</h2>
+<h3 id="matrix-algebra">Matrix Algebra</h3>
+<p><img src="/static/images/ch15.1.jpeg" alt="lec151"></p>
+<p><img src="/static/images/ch15.2.jpeg" alt="lec152"></p>
+<p><img src="/static/images/ch15.3.jpeg" alt="lec153"></p>
+<p><img src="/static/images/ch15.4.jpeg" alt="lec154"></p>
+<h2 id="chapter-16">Chapter 16</h2>
+<h3 id="markov-matrices">Markov Matrices</h3>
+<p><img src="/static/images/markov1.jpeg" alt="lec161"></p>
+<p><img src="/static/images/markov2.jpeg" alt="lec162"></p>
+<p><img src="/static/images/markov3.jpeg" alt="lec163"></p>
+<p><img src="/static/images/markov4.jpeg" alt="lec164"></p>
+<p><img src="/static/images/markov5.jpeg" alt="lec165"></p>
+<h2 id="chapter-17">Chapter 17</h2>
+<h3 id="matrix-algebra-1">Matrix Algebra</h3>
+<p><img src="/static/images/ch17.1.jpeg" alt="lec171"></p>
+<p><img src="/static/images/ch17.2.jpeg" alt="lec172"></p>
+<p><img src="/static/images/ch17.3.jpeg" alt="lec173"></p>
+<p><img src="/static/images/ch17.4.jpeg" alt="lec174"></p>
+<h2 id="chapter-18">Chapter 18</h2>
+<h3 id="matrix-algebra-2">Matrix Algebra</h3>
+<p><img src="/static/images/ch18.1.jpeg" alt="lec181"></p>
+<p><img src="/static/images/ch18.2.jpeg" alt="lec182"></p>
+<p><img src="/static/images/ch18.3.jpeg" alt="lec183"></p>
+<p><img src="/static/images/ch18.4.jpeg" alt="lec184"></p>
+<h2 id="chapter-19">Chapter 19</h2>
+<h3 id="matrix-algebra-3">Matrix Algebra</h3>
+<p><img src="/static/images/ch19.1.jpeg" alt="lec191"></p>
+<p><img src="/static/images/ch19.2.jpeg" alt="lec192"></p>
+<p><img src="/static/images/ch19.3.jpeg" alt="lec192"></p>
+<p><img src="/static/images/ch19.4.jpeg" alt="lec192"></p>
+<h2 id="chapter-20">Chapter 20</h2>
+<h3 id="matrix-algebra-4">Matrix Algebra</h3>
+<p><img src="/static/images/ch20.1.jpeg" alt="lec201"></p>
+<p><img src="/static/images/ch20.2.jpeg" alt="lec202"></p>
+<p><img src="/static/images/ch20.3.jpeg" alt="lec203"></p>
+<p><img src="/static/images/ch20.4.jpeg" alt="lec204"></p>
+<h2 id="chapter-21">Chapter 21</h2>
+<h3 id="matrix-algebra-5">Matrix Algebra</h3>
+<p><img src="/static/images/ch21.1.jpeg" alt="lec211"></p>
+<p><img src="/static/images/ch21.2.jpeg" alt="lec212"></p>
+<p><img src="/static/images/21.3.jpeg" alt="lec213"></p>
+<p><img src="/static/images/ch21.4.jpeg" alt="lec214"></p>
+<h2 id="chapter-22">Chapter 22</h2>
+<h3 id="matrix-algebra-6">Matrix Algebra</h3>
+<p><img src="/static/images/ch22.1.jpeg" alt="lec221"></p>
+<p><img src="/static/images/ch22.2.jpeg" alt="lec222"></p>
+<p><img src="/static/images/ch22.3.jpeg" alt="lec223"></p>
+<p><img src="/static/images/ch22.4.jpeg" alt="lec224"></p>
+<h2 id="chapter-23">Chapter 23</h2>
+<h3 id="matrix-algebra-7">Matrix Algebra</h3>
+<p><img src="/static/images/ch23.1.jpeg" alt="lec231"></p>
+<p><img src="/static/images/ch23.2.jpeg" alt="lec232"></p>
+<p><img src="/static/images/ch23.3.jpeg" alt="lec233"></p>
+<p><img src="/static/images/ch23.4.jpeg" alt="lec234"></p>
+<h2 id="chapter-24">Chapter 24</h2>
+<h3 id="matrix-algebra-8">Matrix Algebra</h3>
+<p><img src="/static/images/ch24.1.jpeg" alt="lec241"></p>
+<p><img src="/static/images/ch24.2.jpeg" alt="lec242"></p>
+<p><img src="/static/images/ch24.3.jpeg" alt="lec243"></p>
+<p><img src="/static/images/ch24.4.jpeg" alt="lec244"></p>
+<h2 id="chapter-25">Chapter 25</h2>
+<h3 id="matrix-algebra-9">Matrix Algebra</h3>
+<p><img src="/static/images/ch25.1.jpeg" alt="lec251"></p>
+<p><img src="/static/images/ch25.2.jpeg" alt="lec252"></p>
+<p><img src="/static/images/ch25.3.jpeg" alt="lec253"></p>
+<p><img src="/static/images/ch25.4.jpeg" alt="lec254"></p>
 
     </div>
   </article>
@@ -1005,6 +1787,96 @@ subspace <em>V</em> defined by the span of vectors <em>v</em> and <em>w</em></p>
     <li><a href="#chapter-7">Chapter 7</a>
       <ul>
         <li><a href="#applications-of-projections-in-mathbfrn-orthogonal-bases-of-planes-and-linear-regression">Applications of Projections in $\mathbf{R}^n$: orthogonal bases of planes and linear regression</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-8">Chapter 8</a>
+      <ul>
+        <li><a href="#multivariable-functions-level-sets-and-contour-plots">Multivariable functions, level sets, and contour plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-9">Chapter 9</a>
+      <ul>
+        <li><a href="#partial-derivatives-and-contour-plots">Partial derivatives and contour plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-10">Chapter 10</a>
+      <ul>
+        <li><a href="#maxima-minima-and-critical-points">Maxima, minima, and critical points</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-11">Chapter 11</a>
+      <ul>
+        <li><a href="#gradients-local-approximations-and-gradient-descent">Gradients, local approximations, and gradient descent!</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-12">Chapter 12</a>
+      <ul>
+        <li><a href="#constrained-optimization-via-lagrange-multipliers">Constrained optimization via Lagrange multipliers</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-13">Chapter 13</a>
+      <ul>
+        <li><a href="#linear-functions-matrices-and-the-derivative-matrix">Linear functions, matrices, and the derivative matrix</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-14">Chapter 14</a>
+      <ul>
+        <li><a href="#linear-transformations-and-matrix-multiplication">Linear transformations and matrix multiplication</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-15">Chapter 15</a>
+      <ul>
+        <li><a href="#matrix-algebra">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-16">Chapter 16</a>
+      <ul>
+        <li><a href="#markov-matrices">Markov Matrices</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-17">Chapter 17</a>
+      <ul>
+        <li><a href="#matrix-algebra-1">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-18">Chapter 18</a>
+      <ul>
+        <li><a href="#matrix-algebra-2">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-19">Chapter 19</a>
+      <ul>
+        <li><a href="#matrix-algebra-3">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-20">Chapter 20</a>
+      <ul>
+        <li><a href="#matrix-algebra-4">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-21">Chapter 21</a>
+      <ul>
+        <li><a href="#matrix-algebra-5">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-22">Chapter 22</a>
+      <ul>
+        <li><a href="#matrix-algebra-6">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-23">Chapter 23</a>
+      <ul>
+        <li><a href="#matrix-algebra-7">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-24">Chapter 24</a>
+      <ul>
+        <li><a href="#matrix-algebra-8">Matrix Algebra</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-25">Chapter 25</a>
+      <ul>
+        <li><a href="#matrix-algebra-9">Matrix Algebra</a></li>
       </ul>
     </li>
   </ul>

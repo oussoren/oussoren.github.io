@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/cs-106b/</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/cs-61a-notes/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,9 +30,6 @@
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/test/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

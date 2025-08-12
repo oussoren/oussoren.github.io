@@ -5,17 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb26f6f-3551-4768-8445-ff455b2639e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/CS 61A Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/CS 61A Notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/Linear Algebra Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Linear Algebra Notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/CS 106B.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hugo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/hugo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/categories/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/posts/cs-61a-notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/cs-61a-notes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/posts/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/posts/linear-algebra-notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/linear-algebra-notes/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.content" beforeDir="false" afterPath="$PROJECT_DIR$/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.content" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/math/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/math/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/math/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/math/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/programming/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/programming/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/programming/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/programming/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stupid" beforeDir="false" afterPath="$PROJECT_DIR$/stupid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stupid/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stupid/archetypes/default.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stupid/create-site.sh" beforeDir="false" />
@@ -92,9 +100,8 @@
       <change beforePath="$PROJECT_DIR$/stupid/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stupid/themes/cactus" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/stupid/{}" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/cactus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/cactus" beforeDir="false" afterPath="$PROJECT_DIR$/themes/cactus" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/cactus/layouts/partials/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/themes/cactus/layouts/partials/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{}" beforeDir="false" afterPath="$PROJECT_DIR$/{}" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +171,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-1b1018131e27-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.180" />
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
