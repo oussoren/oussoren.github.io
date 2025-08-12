@@ -4,104 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb26f6f-3551-4768-8445-ff455b2639e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/CS 61A Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/CS 61A Notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/Linear Algebra Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/Linear Algebra Notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/posts/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/CS 106B.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hugo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/hugo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/posts/cs-61a-notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/cs-61a-notes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/posts/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/posts/linear-algebra-notes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/posts/linear-algebra-notes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/math/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/math/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/math/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/math/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/programming/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/programming/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/tags/programming/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/programming/index.xml" afterDir="false" />
+    <list default="true" id="5fb26f6f-3551-4768-8445-ff455b2639e7" name="Changes" comment="Update blog and add new content">
       <change beforePath="$PROJECT_DIR$/stupid" beforeDir="false" afterPath="$PROJECT_DIR$/stupid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/archetypes/default.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/create-site.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/hugo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/categories/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/css/styles.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/js/code-copy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/js/feather.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/js/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Bold-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-ExtraBold-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Medium-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Bold-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Bold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-ExtraBold-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-ExtraBold.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Medium-Italic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Medium.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/eot/JetBrainsMono-Regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Bold-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-ExtraBold-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-ExtraBold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Medium-Italic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Medium.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Bold-Italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-ExtraBold-Italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-ExtraBold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Medium-Italic.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Medium.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/clipboard/clipboard.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/css/all.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/font-awesome/webfonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/jquery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/justified-gallery/css/justifiedGallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/lib/justified-gallery/js/jquery.justifiedGallery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/public/tags/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.content" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/resources/_gen/assets/scss/style.scss_b4ac9c581169bbe215738ec274a3b4f2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/themes/cactus" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stupid/{}" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/cactus" beforeDir="false" afterPath="$PROJECT_DIR$/themes/cactus" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/cactus/layouts/partials/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/themes/cactus/layouts/partials/head.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +100,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update blog and add new content" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update blog and add new content" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
