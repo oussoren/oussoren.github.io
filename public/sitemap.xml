@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/about/</loc>
+    <loc>https://example.org/about/about/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://example.org/about/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cs-61a-notes/</loc>
+    <loc>https://example.org/posts/cs-61a-notes/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cs-106b/</loc>
+    <loc>https://example.org/posts/cs-106b/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/linear-algebra-notes/</loc>
+    <loc>https://example.org/posts/linear-algebra-notes/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/math/</loc>
+    <loc>https://example.org/tags/math/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://example.org/posts/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>https://example.org/tags/programming/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://example.org/tags/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url>
 </urlset>
