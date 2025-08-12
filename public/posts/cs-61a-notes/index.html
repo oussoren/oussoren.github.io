@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> CS 106/61A Notes | Max Oussoren</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/posts/cs-61a-notes/'>
+  <meta name="description" content="Hi">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/posts/cs-61a-notes/">
+  <meta property="og:site_name" content="Max Oussoren">
+  <meta property="og:title" content="CS 106/61A Notes">
+  <meta property="og:description" content="Intro CS notes">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-19T00:00:00+00:00">
+    <meta property="article:tag" content="Math">
+    <meta property="article:tag" content="Programming">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CS 106/61A Notes">
+  <meta name="twitter:description" content="Intro CS notes">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://localhost:1313/posts/cs-106b/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://localhost:1313/about/about/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&text=CS%20106%2f61A%20Notes" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&is_video=false&description=CS%20106%2f61A%20Notes" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=CS%20106%2f61A%20Notes&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&name=CS%20106%2f61A%20Notes&description=Intro%20CS%20notes" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&t=CS%20106%2f61A%20Notes" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#week-1">Week 1</a>
+      <ul>
+        <li><a href="#broad-basics-of-computer-science">Broad Basics of Computer Science:</a></li>
+        <li><a href="#python-syntax">Python Syntax:</a></li>
+        <li><a href="#loops-and-logic-operations">Loops and Logic Operations:</a></li>
+        <li><a href="#coding-style">Coding Style</a></li>
+        <li><a href="#misc-keyboard-shortcuts">Misc. Keyboard Shortcuts</a></li>
+        <li><a href="#bigger-picture-of-programs-and-how-to-decompose-a-program">Bigger Picture of Programs and How to Decompose a Program</a></li>
+        <li><a href="#calling-functions">Calling Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-2">Week 2</a>
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#digital-images">Digital Images</a></li>
+        <li><a href="#for-loop">For Loop</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-3">Week 3</a>
+      <ul>
+        <li><a href="#deciphering-functions">Deciphering Functions</a></li>
+        <li><a href="#boolean-values">Boolean Values</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#else-elif-and-more-if">Else, Elif, and More If</a></li>
+        <li><a href="#grids">Grids</a></li>
+        <li><a href="#doctests">Doctests</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#debugging-techniques">Debugging Techniques</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-4">Week 4</a>
+      <ul>
+        <li><a href="#string-innot-in">String in/not in</a></li>
+        <li><a href="#andor-in-conditional-statements">And/Or in conditional statements</a></li>
+        <li><a href="#function-improvement-strategy">Function Improvement Strategy</a></li>
+        <li><a href="#notes-about-elif">Notes about Elif</a></li>
+        <li><a href="#string-slices">String Slices</a></li>
+        <li><a href="#leveraging-patterns">Leveraging patterns</a></li>
+        <li><a href="#value-types">Value types</a></li>
+        <li><a href="#file-reading-and-txt-stuff">File reading and .txt stuff</a></li>
+        <li><a href="#more-command-line">More Command Line</a></li>
+        <li><a href="#foreach-loops">Foreach loops</a></li>
+        <li><a href="#lists-finally">Lists FINALLY</a></li>
+        <li><a href="#foreach-on-lists">Foreach on lists</a></li>
+        <li><a href="#constants">Constants</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-5">Week 5</a>
+      <ul>
+        <li><a href="#writing-good-code">Writing good code</a></li>
+        <li><a href="#bits">Bits</a></li>
+        <li><a href="#more-of-how-computers-actually-work">More of How Computers Actually Work</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-6">Week 6</a>
+      <ul>
+        <li><a href="#more-ifwhile-loops">More if/while loops</a></li>
+        <li><a href="#boolean-expressions">Boolean Expressions</a></li>
+        <li><a href="#style-bit">Style bit</a></li>
+        <li><a href="#canvas-drawing-">Canvas Drawing :/</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-7">Week 7</a>
+      <ul>
+        <li><a href="#dictionaries">Dictionaries!!!</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#more-dictionaries">More dictionaries</a></li>
+        <li><a href="#lists">Lists</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-8">Week 8</a>
+      <ul>
+        <li><a href="#tuples">Tuples</a></li>
+        <li><a href="#more-dictionary--tuples">More dictionary + tuples</a></li>
+        <li><a href="#map-and-lambda">Map and Lambda</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-9">Week 9</a>
+      <ul>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#web-stuff">Web stuff</a></li>
+        <li><a href="#list-comprehension">List Comprehension</a></li>
+        <li><a href="#explanations-for-some-glossed-over-lines">Explanations for some glossed over lines</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        CS 106/61A Notes
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-12-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-12-19</time>
+          
+        </div>
+        
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/math" rel="tag">math</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/programming" rel="tag">programming</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="lecture-notes">Lecture notes</h1>
+<p>Here I will ramble about my brief course in introductory CS :)</p>
+<h2 id="week-1">Week 1</h2>
+<h3 id="broad-basics-of-computer-science">Broad Basics of Computer Science:</h3>
+<p>A computer program is a collection of code for the computer to run.
+The code in a program is divided into smaller, logical units of code called functions,
+much as all the words that make up an essay are divided into logical paragraphs.</p>
+<h3 id="python-syntax">Python Syntax:</h3>
+<p>In python functions are made by writing def function_name (parameter1, parameter2,&hellip; parameter n).
+The function is called by writing function_name(parameters).</p>
+<p>This executes the function with the given parameters and outputs a specific value of some sort
+The potential values could be an array, number, a true/false value,
+or it could return a string or function.</p>
+<p>Often times there are libraries of functions which are given to programmers to use, so it becomes
+very important that the functions output and parameters are well understood.</p>
+<p>There are certain built-in functions/operations like pow, +, -, //, *, **, sort, sum, %, etc.
+which can be interpreted as part of pythons included library of functions</p>
+<p>There will be syntax errors&ndash;they are inevitable&ndash;so you need to know what to do about the errors
+Best option is to read the error message. Sometimes the message will hint at the source of the error which
+will save a bunch of time.</p>
+<h3 id="loops-and-logic-operations">Loops and Logic Operations:</h3>
+<p>Loops essentially iterate a specific line of actions based on certain logic operations.
+Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># you can add code with backticks</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    print(i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>There may be loops nested in other loops which iterate a separate action within each larger iteration of a
+function depending on another logic operation.
+Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>        print(i <span style="color:#f92672">*</span> j, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">prints a multiplication table up to 10x10
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>I have only listed for loops, but there are other loops such as while loops which perform similar functions but carry
+a different syntax and have varied uses.</p>
+<p>While loops evaluate the expression that follows them and runs the body if the test is true/otherwise the code runs the
+code that follows the while loop.</p>
+<p>Logic operations such as ==, !=, &lt;=, &lt;, &gt;=, &gt;, etc. all evaluate the true/false value of a comparison then perform an
+action based on the result of the comparison.</p>
+<p>&lsquo;None&rsquo; represents a null value</p>
+<p>Can also make use of &rsquo;not&rsquo; in logic operations to invert it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x<span style="color:#f92672">=</span><span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> x<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">7</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> x<span style="color:#f92672">&lt;=</span>a:
+</span></span><span style="display:flex;"><span>        x<span style="color:#f92672">-=</span><span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Yes this code is kinda pointless but it shows how &#39;not&#39; works&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>Another Example of Logic Operations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> x<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>    x<span style="color:#f92672">=</span>x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    print(x)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Just writes all the values of x from 1-10
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>In this case the logic operation was proceeded by a while statement, but it can also be proceeded by if or elif which
+perform an operation depending on the output of the logic operation.</p>
+<p>An &ldquo;expression&rdquo; is a piece of code that, when it runs, returns a value to that spot in the code. True/false are referred
+to as boolean values.</p>
+<p>The if statement syntax has four parts — the word &ldquo;if&rdquo;, boolean test-expression, colon, indented body lines. The if
+statement doesn&rsquo;t continue to run on its own, instead it evaluates the expression once, if it&rsquo;s true then it evaluates
+the body of the statement, if it&rsquo;s false it simply moves on.</p>
+<h3 id="coding-style">Coding Style</h3>
+<p>This is very basic stuff but will be essential in simplifying and optimizing code.</p>
+<p><strong>Indent 4 Spaces:</strong>
+Indent 4 spaces whenever defining a function or writing out the body of a loop.</p>
+<p><strong>One Space between items:</strong> always space between items except for the space to the left of a comma and in a function
+name and its parenthesis. No space between parenthesis and their contents.</p>
+<p><strong>pass:</strong>
+The word pass in Python means is a placeholder that does nothing. Often pass in the code marks the place where
+you add code. Remove the pass when you put your code in, it&rsquo;s just a placeholder.</p>
+<p><strong>def - 2 Blank Lines:</strong>
+In code with multiple functions, leave 2 blank lines between defs.</p>
+<p><strong>Single quote:</strong>
+Use single quotes when enclosing texts/strings.</p>
+<p><strong>Helper Functions:</strong>
+Usually helpers are put first in the program text.</p>
+<h3 id="misc-keyboard-shortcuts">Misc. Keyboard Shortcuts</h3>
+<p>A few keyboard tricks for editing code. On the Mac, &ldquo;command&rdquo; here refers to the &ldquo;command&rdquo; key. On windows it&rsquo;s either
+the control key or the windows key.</p>
+<ol>
+<li>
+<p>Select multiple lines - tab, shift-tab to indent and un-indent.</p>
+</li>
+<li>
+<p>Select multiple lines - command-/ (command slash) comments and un-comments lines.</p>
+</li>
+<li>
+<p>Control-k &ldquo;kills&rdquo; a line of text, deleting it. Works in gmail and all web forms and in a lot of editors.</p>
+</li>
+</ol>
+<h3 id="bigger-picture-of-programs-and-how-to-decompose-a-program">Bigger Picture of Programs and How to Decompose a Program</h3>
+<p>Broadly, Programs are made up by many functions. So if we want to understand the overall function of a program, what we
+should do is to break it down into its composite functions. Then we can look at smaller &ldquo;helper functions&rdquo; which seem to
+solve a sub-problem. By understanding the helper functions, we can understand larger functions and mesh it all together
+to understand the overall program.</p>
+<p><strong>Web Browser:</strong>
+Web Browsers are made up of millions of lines of code. It&rsquo;s an inconceivable amount of code, but if we decompose the
+browser into smaller helper functions such as, draw_png_image() or check_ssl_keys(), we can get an idea of how the
+browser executes some of its functions. The idea is that the web browser has been shattered into thousands of smaller
+functions and the coherence of all the smaller functions is what produces the browser the user sees.</p>
+<h3 id="calling-functions">Calling Functions</h3>
+<p>In Python there are 2 ways of calling functions: call&ndash;noun.verb() and call&ndash;function_name(parameter).</p>
+<p>To define a function we write def function_name or function.name() and we follow this by a colon and indented lines of
+code which define the operation of the function. We can then define the value that the function returns when it is
+evaluated by writing return &lsquo;value&rsquo;.</p>
+<p>When a function is called in code, the computer is redirected to read the code within the function before returning to
+the space after the function call.</p>
+<p><strong>Function Pre/Post Conditions:</strong></p>
+<p>-Think careful about each function&rsquo;s boundaries, so that they fit together when called together
+-Think about pre/post conditions of each function
+-pre: assumptions&ndash;<em>required</em> before it runs
+-post: results after it runs&ndash;<em>promised</em> after it runs
+-Pre/post make the contract of function - i.e. what lines in the function get to assume and what to expect after it runs</p>
+<h2 id="week-2">Week 2</h2>
+<h3 id="variables">Variables</h3>
+<p>When setting a variable, all that is needed is to simply state the name of the variable, follow it by an equal sign,
+then add a value that the variable is equal to. On later lines when this variable is called, the program will retrieve
+the stored value of the variable. Variables in CS are different since once declared, they can be set to different values
+and when retrieved/called later in the code, the value retrieved will be the most recently declared value of the variable.
+In other words, it is not like math where the equal sign sets up a permanent equality.</p>
+<h3 id="digital-images">Digital Images</h3>
+<p>Images are broken down into pixels. These pixels store the information for a single color. This data can be stored in a
+number of ways, but for now we will focus on RGB. RGB values are stored as the set of 3 values (red, green, blue) with
+ranges for these values from 0 to 255. Pixels are arranged in an x,y coordinate system with origin at the top left and
+positive y in the downwards direction and positive x in the rightwards direction. We can edit an image by uploading it
+into python, then creating a variable for pixel which refers to one pixel inside an image. We can edit the RGB values of
+this pixel by using pixel.color=value(from 0-255)</p>
+<h3 id="for-loop">For Loop</h3>
+<p>This is probably the single most useful loop. The for loop executes an action or collection of lines FOR each value in
+some collection. In other words it iterates a function n times, where n is the number of items in a collection.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> var <span style="color:#f92672">in</span> collection:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#use variable here(do something for each iteration)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> value
+</span></span></code></pre></div><p>The value will be returned as the output of the function. Often times we will use range(set) instead of collection. Note:
+in python and all code for that matter, indexing begins at index 0. Therefore we must consider this when discussing the
+range of a set. I.e. range(10) -&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]. If we want to update the value of a variable in a loop
+it is common practice to use shorthand forms of certain operations. I.e. x = x + 1 &ndash;&gt; x += 1; x = x - 1 &ndash;&gt; x-= 1;
+x = x * 1 &ndash;&gt; x *= 1.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">red_channel</span>(filename):
+</span></span><span style="display:flex;"><span>    image <span style="color:#f92672">=</span> SimpleImage(filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> pixel <span style="color:#f92672">in</span> image:
+</span></span><span style="display:flex;"><span>        pixel<span style="color:#f92672">.</span>green <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        pixel<span style="color:#f92672">.</span>blue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> image
+</span></span></code></pre></div><p>Nested for loops: when we have two for loops, we iterate through the entire inner loop for each iteration of the outer loop.</p>
+<p>Example related to images:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">darker</span>(filename):
+</span></span><span style="display:flex;"><span>    image <span style="color:#f92672">=</span> SimpleImage(filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>width):
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>get_pixel(x, y)
+</span></span><span style="display:flex;"><span>            pixel<span style="color:#f92672">.</span>red <span style="color:#f92672">*=</span> <span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>            pixel<span style="color:#f92672">.</span>green <span style="color:#f92672">*=</span> <span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>            pixel<span style="color:#f92672">.</span>blue <span style="color:#f92672">*=</span> <span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> image
+</span></span></code></pre></div><ol>
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aqua_stripe</span>(filename):
+</span></span><span style="display:flex;"><span>    image <span style="color:#f92672">=</span> SimpleImage(filename)
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> SimpleImage<span style="color:#f92672">.</span>blank(image<span style="color:#f92672">.</span>width<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>, image<span style="color:#f92672">.</span>height)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>            out_pixel <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>get_pixel(x, y)
+</span></span><span style="display:flex;"><span>            out_pixel<span style="color:#f92672">.</span>red <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>width):
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>get_pixel(x, y)
+</span></span><span style="display:flex;"><span>            out_pixel <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>get_pixel(x<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>, y)
+</span></span><span style="display:flex;"><span>            out_pixel<span style="color:#f92672">.</span>red <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>red
+</span></span><span style="display:flex;"><span>            out_pixel<span style="color:#f92672">.</span>green <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>green
+</span></span><span style="display:flex;"><span>            out_pixel<span style="color:#f92672">.</span>blue <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>blue
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Takes an image, makes a separate image 10 pixels wider with an aqua stripe on the left 10 pixels of width of the image.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Does this by looping through the first width of pixel&#34;&#34;&#34;</span>
+</span></span></code></pre></div><ol start="2">
+<li></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mirror2</span>(filename):
+</span></span><span style="display:flex;"><span>    image <span style="color:#f92672">=</span> SimpleImage(filename)
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> SimpleImage<span style="color:#f92672">.</span>blank(image<span style="color:#f92672">.</span>width <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, image<span style="color:#f92672">.</span>height)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>width):
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>get_pixel(x, y)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># left copy</span>
+</span></span><span style="display:flex;"><span>            pixel_left <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>get_pixel(x, y)
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>red <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>red
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>green <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>green
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>blue <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>blue
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># right copy</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># this is the key spot</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># have: pixel at x,y in image</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># want: pixel_right at ??? to write to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>height):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(image<span style="color:#f92672">.</span>width):
+</span></span><span style="display:flex;"><span>            pixel <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>get_pixel(image<span style="color:#f92672">.</span>width<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>x, y)
+</span></span><span style="display:flex;"><span>            pixel_left <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>get_pixel(image<span style="color:#f92672">.</span>width<span style="color:#f92672">+</span>x, y)
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>red <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>red
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>green <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>green
+</span></span><span style="display:flex;"><span>            pixel_left<span style="color:#f92672">.</span>blue <span style="color:#f92672">=</span> pixel<span style="color:#f92672">.</span>blue
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;Creates a mirror image by copying the original then setting the coordinates of the copy pixel equal to the mirror 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">coordinate by taking the width-1(accounting for zero-based indexing) and subtracting the x coordinate&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><em>Note that both 1 and 2 use helper functions which I have not defined here</em></p>
+<p><em>(i.e. image.get_pixel(x, y), SimpleImage.blank)</em></p>
+<p><strong>Math systems:</strong>
+In python there are two math systems: int and float. Int includes&hellip;well&hellip;integers. Wow, shocker. Float includes
+numbers that are not whole numbers(or they are and they just are followed by a .0. Both int and float support the usual
+operators: +, -, *, /. These languages follow pemdas, after accounting for pemdas the evaluation goes from left to right.
+Int-inputs lead to int-outputs(excpet/below). Presence of a float value makes the whole expression float. Python int
+values do not have a fixed &ldquo;max&rdquo;-unusual since must languages do. Float is not actually precise. Even if the answer
+evaluates to a whole number, a float input forces the result to be float. Must pay attention to float vs int because
+when these numbers are used as parameters, their type may cause a function to fail.</p>
+<p>We can convert between int and float values by writing int(value) which will round down to the integer value of the
+input. float(value) will simply attach a dot and zero to the end.</p>
+<p>Division: / is unique. a / b returns a float value no matter the input. // will round down(essentially int(a/b))</p>
+<p><strong>How do parameters work:</strong>
+The parenthesis part of the function call contains the parameter values for the function, also known as the arguments of
+the functions. When a function is called it essentially takes the argument it is given in the call and uses that value
+as a stored variable for the body of the function. Functions must be called with the correct number of parameters&ndash;
+sometimes functions can be called with a blank() this just runs the function with some default parameters that can be
+optionally set.</p>
+<h2 id="week-3">Week 3</h2>
+<h3 id="deciphering-functions">Deciphering Functions</h3>
+<p>One of the best ways to not only develop functions, but also decipher them is to break them down into certain test cases
+where we fix the inputs and outputs and look at/come up with a way for the computer to get from fixed input to fixed
+output.</p>
+<p><strong>Return value pick-off strategy:</strong>
+One way we can make sure the function is returning the right value for certain test cases is a pick-off strategy in
+which we have a set number of outcomes and conditions needed to get those outcomes and we simply make an if statement
+for each condition followed by the appropriate outcome return value. Pick off is like a vertical to-do list of tests,
+and the code will just go through them order until one is True. The cases form a simple, vertical series to try in that
+order.</p>
+<p>def pick_offs(x):
+if <em>case1</em>:
+return <em>answer1</em></p>
+<pre><code>if *case2*:
+    return *answer2*
+
+if *case3*:
+    return *answer3*
+
+return *nocaseworked*
+</code></pre>
+<h3 id="boolean-values">Boolean Values</h3>
+<p>Boolean values are simply true false values. If-test and while-test work with boolean inputs. Booleans are produced by
+==, !=, &lt;=, &gt;=, &lt;, &gt;</p>
+<h3 id="strings">Strings</h3>
+<p>-Very widely used data type</p>
+<p>-e.g. &lsquo;Hello&rsquo;</p>
+<p>-Strings are basically just sequences of characters</p>
+<p>-A string in code is called a &ldquo;literal&rdquo;</p>
+<p>-Python strings are written on one line with single quotes</p>
+<p>-Can also use double quotes if you need a '</p>
+<p><strong>len() function:</strong>
+-Returns the number of characters in a string</p>
+<p>-Empty string is zero chars</p>
+<p>-&rsquo;'</p>
+<p>-Valid string with len()=0</p>
+<p>-Strings are also zero-based indexed</p>
+<p>-String characters/and array values can be accessed by string/array[index]</p>
+<p>-Valid from 0 to len-1</p>
+<p>-Strings are not editable like other variables</p>
+<p>-They are called immutable</p>
+<p>-e.g. s=&lsquo;python&rsquo;</p>
+<p>&ndash;&gt;s[0]=&lsquo;P&rsquo;</p>
+<p>-s[0]=&lsquo;x&rsquo;</p>
+<p>&ndash;&gt;error</p>
+<p>-Strings can be combined by the plus operator which simply concatenates the two strings on either side</p>
+<p>-uses a new memory to hold the result</p>
+<p>-a=&lsquo;hello&rsquo;</p>
+<p>-b=&lsquo;there&rsquo;</p>
+<p>-a+b</p>
+<p>&ndash;&gt;&lsquo;hello there&rsquo;</p>
+<p>-a</p>
+<p>&ndash;&gt;&lsquo;hello&rsquo;</p>
+<p>A string is made of characters, aka chars. Characters are divided into character classes:</p>
+<ol>
+<li>
+<p>Alpha (alphabetic) - e.g. &lsquo;a&rsquo;, &lsquo;k&rsquo;, &lsquo;R&rsquo;, &lsquo;Z&rsquo; .. used to make words</p>
+</li>
+<li>
+<p>Digits - &lsquo;0&rsquo; &lsquo;1&rsquo; .. &lsquo;9&rsquo; used to make numbers</p>
+</li>
+<li>
+<p>Space - space &rsquo; &rsquo; , newline &lsquo;\n&rsquo; tab &lsquo;\t&rsquo;, - aka &ldquo;whitespace&rdquo;</p>
+</li>
+</ol>
+<p>Newline &lsquo;\n&rsquo; is char from the return/enter key on keyboard</p>
+<p>The backslash form &lsquo;\XXX` is a way to write special characters, e.g. &lsquo;\n&rsquo; is newline</p>
+<ol start="4">
+<li>Misc - &lsquo;$&rsquo; &lsquo;%&rsquo; &lsquo;;&rsquo; &hellip; miscellaneous chars not in the first 3 categories</li>
+</ol>
+<p>There are noun.verb tests s.isalpha() s.isdigit() s.isspace() returning boolean True or False if a char is in a category</p>
+<p>There is not a test for &ldquo;misc&rdquo;, which is just a char which is not alpha or digit or space</p>
+<p>For empty string these return False (a weird edge case)</p>
+<p>&ndash;&gt; &lsquo;abc&rsquo;.isalpha(): True   # Works for multiple chars too</p>
+<p>&ndash;&gt; &lsquo;9&rsquo;.isdigit(): True</p>
+<p>s.upper() - returns uppercase form of s</p>
+<p>s.lower() - returns lowercase form of s</p>
+<p>Immutable: s.upper() returns a new, converted string&ndash;&gt;The original string s is unchanged</p>
+<p>s.isupper() - True if made of uppercase chars</p>
+<p>s.islower() - True if made of lowercase chars</p>
+<p>A char with no upper/lower difference, e.g. &lsquo;@&rsquo; or &lsquo;2&rsquo;</p>
+<p>Returned unchanged by upper()/lower()</p>
+<p>isupper()/islower() return False</p>
+<p>Subtle: an &lsquo;@&rsquo; among alpha chars is ignored by .isupper()/.islower()</p>
+<p>So how do you change a string variable? Each time we call a function to compute a changed string, use = to change the
+variable, say s, to point to the new string.</p>
+<p>Say we have a string s, and want to change it to be uppercase and have &lsquo;!!!&rsquo; at its end. Here is code that works to
+change s, using the x = change(x) pattern.</p>
+<h3 id="else-elif-and-more-if">Else, Elif, and More If</h3>
+<p>So far we know that if we use an if statement it will execute a certain number of lines if the test case is valid.
+We will use the if/else form when we have two actions, and we always want to run one action or the other.
+<em>The regular if with 1 action is more common</em>.</p>
+<p><strong>Example:</strong>
+<em>not the best</em></p>
+<p>if some_test:</p>
+<pre><code> pass  # do nothing here
+</code></pre>
+<p>else:</p>
+<pre><code> do_something()
+</code></pre>
+<p>The correct way to do that is with not:</p>
+<p>if not some_test:</p>
+<pre><code>do_something()
+</code></pre>
+<h3 id="grids">Grids</h3>
+<p>-grid = Grid(4, 3) - create, all None initially</p>
+<p>-Zero based x,y coordinates for every square in the grid:</p>
+<p>-origin at upper left</p>
+<p>-x: 0..grid.width - 1</p>
+<p>-y: 0..grid.height - 1</p>
+<p>-grid.width - access width or height</p>
+<p>-grid.get(0, 0) - returns contents at x,y (error if out of bounds)</p>
+<p>-grid.set(0, 0, &lsquo;a&rsquo;) - set at x,y</p>
+<p>-grid.in_bounds(2, 2) - returns True if x,y is in bounds</p>
+<h3 id="doctests">Doctests</h3>
+<p>Doctests are a way of modeling what the output of the function should be based on certain specific arguments.
+These are written within the comments &ldquo;&rdquo;&quot;__&quot;&quot;&quot; section of the code and the actual lines which we want to model are
+indicated by &raquo;&gt; followed below by the output of those lines. Need concrete cases to write Doctest. They can be small!
+An input grid, and the expected output grid. That&rsquo;s what makes one test case - an input and expected. We could also call
+these &ldquo;before&rdquo; and &ldquo;after&rdquo; pictures.</p>
+<p>If the got differs in any little way from the expected, the test fails, e.g. having an extra space, or using &quot; instead of the expected &lsquo;.</p>
+<h1 id="dont-write-the-expected-output-like-this---will-fail">Don&rsquo;t write the expected output like this - will fail</h1>
+<p>[[&ldquo;b&rdquo;,     &ldquo;c&rdquo;, None], [None, None, None]]</p>
+<h1 id="write-it-exactly-syntactically-as-the-function-returns-it">Write it exactly syntactically as the function returns it</h1>
+<p>[[&lsquo;b&rsquo;, &lsquo;c&rsquo;, None], [None, None, None]]</p>
+<p>To debug, we want output which is: small, frozen, and visible</p>
+<p>The Doctest gives us exactly this.</p>
+<p>Looking at the failing Doctest, we have the got output the expected and the code - looking at these three is a good step
+for debugging.</p>
+<p>The failing Doctest is like a to-do item — what is the first bit of the got that is wrong? What line produced that?</p>
+<p>Note also that the data for the Doctest case is small and made visible by the system. It&rsquo;s not moving around.
+We can take our time. Contrast this to watching the animation.</p>
+<h3 id="debugging-techniques">Debugging Techniques</h3>
+<p><strong>#1-read the error message:</strong>
+An exception in python represents an error during the run that halts the program. Read the exception message and its
+line number. Then read the text from the bottom up. Look for the first line of code that is your code and read its error
+message. It&rsquo;s basically just flagging where you went wrong and you can often figure out whats wrong just by looking at
+the line again.</p>
+<p><strong>#2-look at the output:</strong>
+The code and output aren&rsquo;t shifting around, they are perfect. You just need to figure out how you messed up when using
+it. Look at the first part of the output which is wrong&ndash;&gt;then figure out what line of the code produced that. You can
+use doctests for this, since they can show you what you need with one click. Run the doctest and you have the code, the
+input, and the output all to work with.</p>
+<p>How do you debug a function? Run its small, frozen, visible Doctests, look at the output, expected and the code - all of
+which the Doctest makes visible.</p>
+<p>Look at the got output from the failed Doctest</p>
+<p>Run program for fun, then run Doctest again for more debugging</p>
+<p>Doctest passes .. run the GUI .. now it&rsquo;s perfect</p>
+<p><strong>#3-add print in the code:</strong>
+This is used less often, but it serves as a means to relieve all the mental tracking of code done in your head. Add
+print in the code to see the state of the variables. Usually we will</p>
+<h2 id="week-4">Week 4</h2>
+<h3 id="string-innot-in">String in/not in</h3>
+<p>You can create boolean values by writing if &lsquo;string&rsquo; in other string. This will return a boolean value. If it is true,
+that means the &lsquo;string&rsquo; can be found somewhere in this other string. Else, the string cannot be found in the other string.
+if &lsquo;string&rsquo; not in string does the same, however the logic is inverted.</p>
+<h3 id="andor-in-conditional-statements">And/Or in conditional statements</h3>
+<p>The &lsquo;and&rsquo; and &lsquo;or&rsquo; statements can be used to make a conditional statement more exclusive or less exclusive respectively.
+&lsquo;and&rsquo; will make sure that both the boolean values are true/false before moving to execute the lines of the if statement,
+&lsquo;or&rsquo; will just check if one of the boolean values is true/false before moving to execute the lines of the if statement.
+I say true/false here because there could be a &lsquo;if <em>not</em> ___:&rsquo; statement.</p>
+<h3 id="function-improvement-strategy">Function Improvement Strategy</h3>
+<p>Sometimes there may be some operation such as s[i].lower(), that we may not want to repeat if we are writing a lengthy
+function(convenience). In such a case, we could add a variable such as &rsquo;low = s[i].lower()&rsquo;, which we could use in places
+where such a thing needs to be evaluated, such as in an if statement. As a general rule, it is best to keep variable
+names very short&ndash;maybe tolerating one _. They cannot, however, be too short or cryptic that the reader won&rsquo;t be able to
+understand.</p>
+<h3 id="notes-about-elif">Notes about Elif</h3>
+<p>Use the if/elif structure to look through a series of tests, stopping at the first True test.
+The structure is exclusive; it selects one case and skips all the others. This is much more rarely used than the plain
+if-statement. The structure has n if-tests.</p>
+<p>if test1:
+action1
+elif test2:
+action2
+elif test3:
+action3
+else:
+action4
+Python goes through the tests from top to bottom, stopping at the first True test. Python runs the corresponding action,
+and then exits the if/elif structure. The result is that at most 1 of the n actions runs. An optional &ldquo;else&rdquo; at the end
+runs if none of the tests succeed. A return can accomplish exclusivity similar to the if/elif structure, which is why we
+have not really needed if/elif up until now.</p>
+<h3 id="string-slices">String Slices</h3>
+<p>Strings can be sliced and the slices of that string can be fetched by using string[slice_start_index:slice_end_index+1].
+Can omit the start index and the slice wills tart from the 0 index. Can also omit the end index and it will slice till
+the end of the string.</p>
+<p>-Optional / advanced shorthand - you never need to use this
+Handy way to refer to chars near the end of string
+Negative numbers to refer to chars at end of string</p>
+<p>-1 is the last char</p>
+<p>-2 is the next to last char</p>
+<p>Works in slices etc.</p>
+<p>Maybe just memorize this one: s[-1] is the last char in s</p>
+<h3 id="leveraging-patterns">Leveraging patterns</h3>
+<p>Often when you confront a computer problem, you&rsquo;ve seen something similar before. It&rsquo;s nice to lean on patterns like
+this, filling in some remembered structure quickly, and then focussing on what is specific to this problem.</p>
+<p>For example wep have already seen this &lsquo;Accumulate pattern&rsquo;. 1. Before ther start: result=empty. 2. in the loop, some
+form of: result += xxx. 3. At the end: return result</p>
+<p>A common problem in computer code is counting the number of times something happens within a data set. This fits the
+accumulate pattern, using count = 0 before the loop and count += 1 in the loop. Recall that the line count += 1 will
+increase the int stored in the variable by 1.</p>
+<h3 id="value-types">Value types</h3>
+<p>Python code works on values, and each value has a typer which determines how it behaves. Some types we are already
+familiar with include: int, str, null, booleans, floats, etc.</p>
+<p>Python operators such as + depend on value types being compatible. We can convert values using type conversions:</p>
+<p>int(xxx) takes in string (or other) value, converts to int
+e.g. int(&lsquo;123&rsquo;) -&gt; 123</p>
+<p>str(xxx) takes in int (or other) value, converts to str
+e.g. str(77) -&gt; &lsquo;77&rsquo;</p>
+<p>Works for other types we will see later too: float(), list(), bool()
+<strong>New operators:</strong></p>
+<p>The int division operator // rounds down to produce int, so we use this when we need an int. This division and discards
+any remainder, rounding the result down to the next integer.</p>
+<p>Mod operator %: Basically just gives the remainder after int division. (avoid negative numbers or floats).
+0=divided evenly. 57 % 10 = 7. mod 0 doesn&rsquo;t work, obviously. mod 2 can offer if something is even or odd.</p>
+<h3 id="file-reading-and-txt-stuff">File reading and .txt stuff</h3>
+<p>We are basically always going to be running python given some input files. Below is basically just a tutorial for how to
+work with .txt files in python. It also covers how to work with other files and how the computer runs programs as a
+whole but the primary focus is .txt.</p>
+<p><img src="/static/images/lec1.png" alt="1.">
+<img src="/static/images/lec2.png" alt="2.">
+<img src="/static/images/lec3.png" alt="3.">
+<img src="/static/images/lec4.png" alt="4."></p>
+<p>The newline character &lsquo;\n&rsquo; at the end of each line can be nuisance. We can remove it with the s.strip() function which
+returns a version of the string with whitespace chars like space and newline removed from the beginning and end of a
+string.</p>
+<h3 id="more-command-line">More Command Line</h3>
+<p>We are familiar with working in the command line for writing little phrases and running code, and in python for actually
+creating code that does something. The connection between these two lies in python under the main() function.</p>
+<p>The function main() is typically the first function to run in a python program, and its job is looking at the command
+line arguments and figuring out how to start up the program.</p>
+<p>Command line arguments, or &ldquo;args&rdquo;, are extra information typed on the line when a program is run. The system is
+deceptively simple - the command line arguments are the words typed after the program.py on the command line, separated
+from each other by spaces.</p>
+<p>Under main: CS106A standard line args = sys.argv[1:] which sets up a list named args to contain the command line arg
+strings.</p>
+<p>The code in main() can use a simple series of if-statements to detect the different options, such as -affirm, and run
+the appropriate code for each option.</p>
+<p>For example, consider a run of the program with the -affirm option like this:</p>
+<p>$ python3 affirm.py -affirm Lisa
+Here is the if-statement in main() which detects this command line option and runs the code for it. The code checks if
+the number of args is 2, and the first arg (i.e. args[0]) is -affirm. If so, it prints the name which is in args[1] with
+a random affirmation.</p>
+<p>def main()
+args = sys.argv[1:]</p>
+<pre><code># 1. Check for the arg pattern:
+#   python3 affirm.py -affirm Bart
+#   e.g. args[0] is '-affirm' and args[1] is 'Bart'
+if len(args) == 2 and args[0] == '-affirm':
+    # Select random nice phrase
+    affirmation = random.choice(AFFIRMATIONS)
+    # Print with the name in args[1]
+    print(affirmation, args[1])
+</code></pre>
+<p><em>The values in the args list are always strings.</em>\</p>
+<h3 id="foreach-loops">Foreach loops</h3>
+<p>foreach loops can loop over some collection of values(could be a string, could be a list, could be a dictionary, etc.)
+and for each variable of a specified type it finds in the collection it will do something. E.g. for ch in s: &ndash;looks at
+each character in a string &rsquo;s&rsquo; and does something.</p>
+<p>You should use this when you don&rsquo;t need to work with the index of each item.</p>
+<p>Example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_digits2</span>(s):
+</span></span><span style="display:flex;"><span>    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> ch <span style="color:#f92672">in</span> s:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ch<span style="color:#f92672">.</span>isdigit():
+</span></span><span style="display:flex;"><span>            num <span style="color:#f92672">=</span> int(ch)  <span style="color:#75715e"># &#39;7&#39; -&gt; int 7</span>
+</span></span><span style="display:flex;"><span>            sum <span style="color:#f92672">+=</span> num
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sum
+</span></span></code></pre></div><h3 id="lists-finally">Lists FINALLY</h3>
+<p>Lists are linear collections of any type of python value, written within square brackets and separated by commas.</p>
+<p>Basically they are just vectors that can store more information than just numbers.</p>
+<p>The values in a list are called &ldquo;elements&rdquo;</p>
+<p>To access a value at a particular index of the list just do lst[i]. And yeah the generic name is lst.</p>
+<p>Unlike strings, you can change the value of a list at a particular index and it will permanently change.</p>
+<p>lst.append(value) adds an element to the end of the list. += does not work and nor does = without an index</p>
+<p>Can tell whether a value is in a list(in boolean form) or not in a list(inverted boolean) by using &ldquo;value in lst&rdquo;</p>
+<p>list.index(target) finds the index of a target</p>
+<p><em>Note that this will produce a runtime error if target is not in the list, so we must combine with: &ldquo;if value in list:&rdquo;</em></p>
+<p>A general rule for naming lists is to just write the type of value followed by s. E.g. nums for a list of numbers</p>
+<h3 id="foreach-on-lists">Foreach on lists</h3>
+<p>Can use foreach on lists by using the general form&ndash;for var in list:</p>
+<p>Do not change the list in the for loop: will obviously cause issues</p>
+<p>The loop takes control of the variable&ndash;setting it to point to each element in turn, one element per loop</p>
+<h3 id="constants">Constants</h3>
+<p>Some global variables are meant to be unchanged. Basically we want these to only be read by the code not modified.</p>
+<p>Python Convention: upper case means its a constant</p>
+<h2 id="week-5">Week 5</h2>
+<h3 id="writing-good-code">Writing good code</h3>
+<p>-We need to run the code against a few inputs, checking the output for each case. If the code works against a few cases,
+suggests it is probably correct. It is not a 100% proof, which is surprisingly difficult or impossible to obtain, but
+tests are very good in practice.</p>
+<p>Code that the computer has never run over likely has bugs in it. This can happen if an if-test is always false in a
+program.</p>
+<p>-Make sure code is clean with good style: just helps reduce bugs in the first place, and it&rsquo;s easier to add features to
+code that is already clean.</p>
+<p>-If the code works correctly and looks good, we might also want to tune it to run fast or use less memory. For some bits
+of code, speed is crucial.</p>
+<h3 id="bits">Bits</h3>
+<p>Store 0s and 1s</p>
+<p>-Bytes store 8 bits</p>
+<p>-n bits can represent 2^n patterns</p>
+<h3 id="more-of-how-computers-actually-work">More of How Computers Actually Work</h3>
+<p>We discussed CPU, RAM, and Storage briefly. Now we dive further into what these bits of hardware actually do and what
+some other pieces of hardware do.</p>
+<p>-CPU: central processing unit. Does all the work, operations, runs all the lines. CPU&rsquo;s are divided into cores. Each
+core can run code in RAM. So a 4-core CPU can run 4 processes simultaneously. Adding cores provides diminishing returns.
+CPUs can also do what is known as multiprocessing, basically they just rapidly switch between processes to run them
+simultaneously.</p>
+<p>-RAM: Random access memory. Temporary store of bytes for CPU. Stores code and variables of program. Not persistent ie
+(power off=erased). The area in RAM for each process holds space for the code to run &amp; values for variables. The CPU
+core runs the code and manipulates the values. The CPU core does not run Python directly. Instead, the CPU core runs a
+very simple &ldquo;machine code.&rdquo; Basically 1 line of python code is expanded to about 10 &ldquo;machine code&rdquo; instructions to run
+on the CPU.</p>
+<p>-Storage: persistent storage. Storage in the form of files, folders, measured in bytes.</p>
+<p>-GPU: Graphics Processing Unit. Specialized for graphics/pixel processing.</p>
+<p>-TPU: Tensor(higher dimensional matrix) Processing Unit. Specialized for AI inference work.</p>
+<p>Whenever we run a program, it is known as a process. Each process gets its own area in RAM. Each process in RAM is kept
+separate from the others. Multiple processes can run at one time. When a process exits, its RAM space is reclaimed. The
+operating system manages the processes. Specifically, operating systems do the following: start and stop programs,
+manage memory between processes, manage files.</p>
+<h2 id="week-6">Week 6</h2>
+<h3 id="more-ifwhile-loops">More if/while loops</h3>
+<p>The for/i/range form is great for going through numbers which you know ahead of time - a common pattern in real programs.
+If you need to go through 0..n-1 - use for/i/range, that&rsquo;s exactly what it&rsquo;s for.</p>
+<p>But we also have the while loop. The &ldquo;for&rdquo; is suited for the case where you know the numbers ahead of time. The while is
+more flexible. The while can test on each iteration, stop at the right spot. Ultimately you need both forms, but here we
+will switch to using while.</p>
+<p><em>Note can do a for i in range n loop with a while loop by just doing: while i &lt; n: then updating i in the while loop.</em></p>
+<p>While loops are more useful when we need fine control of the index.</p>
+<p>-New technique: have a var which is essentially a pointer with an index in a string. Then just update the pointer while
+some condition is being fulfilled by that while loop. Should lead to some desired outcome where that condition isn&rsquo;t
+fulfilled.</p>
+<p>Here&rsquo;s an example of the pattern.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">at_word</span>(s):
+</span></span><span style="display:flex;"><span>    at <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;@&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> at <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Advance end over alpha chars</span>
+</span></span><span style="display:flex;"><span>    end <span style="color:#f92672">=</span> at <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> end <span style="color:#f92672">&lt;</span> len(s) <span style="color:#f92672">and</span> s[end]<span style="color:#f92672">.</span>isalpha():
+</span></span><span style="display:flex;"><span>        end <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    word <span style="color:#f92672">=</span> s[at <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>:end]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> word
+</span></span></code></pre></div><h3 id="boolean-expressions">Boolean Expressions</h3>
+<p>Mixtures of boolean operators brings into play the idea of precedence in CS.</p>
+<p>-not has the highest order, followed by and then or.</p>
+<p>-We can work around this by setting parenthesis</p>
+<h3 id="style-bit">Style bit</h3>
+<p>Normally each line of python is unbroken but if you add parenthesis, python allows the code to span multiple lines until
+it reaches the closing parenthesis.</p>
+<p>It&rsquo;s best to indent the later lines in the unbroken line an extra time</p>
+<h3 id="canvas-drawing-">Canvas Drawing :/</h3>
+<p>YAY MY FAVORITE TOPIC &lt;(&lsquo;w&rsquo;)&gt;. Just kidding. But I have to record my notes for it anyways :(. Python has a built-in
+graphical interface known as TK. Within TK, we can do things like build drawings, interactive buttons that get the
+user&rsquo;s input, etc. For now we will focus on just the canvas aspect of TK. The canvas of TK is basically just a grid with
+a bunch of rows and columns marked by x, y. To get the top left coordinate, it is just 0, 0. To get the bottom right
+coordinate, it is just width - 1, height - 1(zero indexing).</p>
+<p>There are a few built in functions we can use to create objects on the canvas:L</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_line</span>(x1, y1, x2, y2):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a black line between points x1,y1 and x2,y2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Optional color=&#39;red&#39; parameter can specify a color.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_rect</span>(x, y, width, height):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a 1 pixel rectangle frame with its upper left at x,y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        and covering width, height pixels.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Takes optional color=&#39;red&#39; parameter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fill_rect</span>(x, y, width, height):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a solid black rectangle with its upper left at x,y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        and covering width, height pixels.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Takes optional color=&#39;red&#39; parameter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_oval</span>(x, y, width, height):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a 1 pixel oval frame with its upper left bounding rect at x,y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        and covering width, height pixels.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Takes optional color=&#39;red&#39; parameter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fill_oval</span>(x, y, width, height):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a solid black oval with its upper left bounding rect at x,y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        and covering width, height pixels.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Takes optional color=&#39;red&#39; parameter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_string</span>(x, y, text):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Draws a black text string with its upper left at x,y
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Takes optional color=&#39;red&#39; parameter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>This is pretty trivial, but here are the formulas that are provided:</p>
+<p>-proportionate x = left + fraction * (width - 1)</p>
+<p>-x = left + 0.5 * (width - 1)       # 50% across</p>
+<p>-x = left + 0.75 * (width - 1)      # 75% across</p>
+<p>-x = left + (3 / 4) * (width - 1)   # equiv fraction</p>
+<p>-x = left + 1.0 * (width - 1)       # 100% across</p>
+<p>Say we want to draw n lines going from the top left corner of the shape to points along the right side of the shape:</p>
+<p>-Natural to write a for loop, draw a line on each iteration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>    y_add <span style="color:#f92672">=</span> (i <span style="color:#f92672">/</span> (n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">*</span> (height <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># call draw_line(), y = top + y_add</span>
+</span></span></code></pre></div><p>Another example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">draw_grid1</span>(width, height, n):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Creates a canvas.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Draws a grid1 of n-by-n black rectangles
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    (this code is complete)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    canvas <span style="color:#f92672">=</span> DrawCanvas(width, height, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Draw1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Figure sizes for all sub rects</span>
+</span></span><span style="display:flex;"><span>    sub_width <span style="color:#f92672">=</span> width <span style="color:#f92672">/</span> n
+</span></span><span style="display:flex;"><span>    sub_height <span style="color:#f92672">=</span> height <span style="color:#f92672">/</span> n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Loop over row/col</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Figure upper left of this sub rect</span>
+</span></span><span style="display:flex;"><span>            left <span style="color:#f92672">=</span> col <span style="color:#f92672">*</span> sub_width
+</span></span><span style="display:flex;"><span>            top <span style="color:#f92672">=</span> row <span style="color:#f92672">*</span> sub_height
+</span></span><span style="display:flex;"><span>            canvas<span style="color:#f92672">.</span>draw_rect(left, top,
+</span></span><span style="display:flex;"><span>                             sub_width, sub_height)
+</span></span></code></pre></div><h2 id="week-7">Week 7</h2>
+<h3 id="dictionaries">Dictionaries!!!</h3>
+<p>-Python &ldquo;dict&rdquo; type, a &ldquo;dictionary&rdquo;</p>
+<p>-Stores key/value pairs</p>
+<p>-Each value is stored under a key</p>
+<p>-Dict is a bit advanced, compared to basic string/list</p>
+<p>-Defining features of a dict:</p>
+<ol>
+<li>
+<p>Choose a key to file each value under, e.g. Sunet, or transaction date</p>
+</li>
+<li>
+<p>Get and set each value under its key</p>
+</li>
+<li>
+<p>The get/set operations are fast</p>
+</li>
+</ol>
+<p>-As we mentioned dictionaries organize data around keys.</p>
+<p>-For each key, the dictionary stores one associated value</p>
+<p>-Can look up a value by its key</p>
+<p>-Not alphabetical: keys are often in a random order</p>
+<p>-Define a dictionary with d={}</p>
+<p>-Set: d[key] = value</p>
+<p>-Set creates that key entry in the dictionary if needed</p>
+<p>-Also overwrites any previous value for that key</p>
+<p>-Literal dict syntax key:value</p>
+<p>{&lsquo;a&rsquo;: &lsquo;alpha&rsquo;, &lsquo;g&rsquo;: &lsquo;gamma&rsquo;, &lsquo;b&rsquo;: &lsquo;beta&rsquo;}</p>
+<p>-d[key] returns the value for that key</p>
+<p>-useful: += &ndash;&gt; Does a get/set series on the value. This will be a handy pattern</p>
+<p>-e.g. d[&lsquo;a&rsquo;] += &lsquo;!!!&rsquo; &ndash;&gt; Equivalent to: d[&lsquo;a&rsquo;] = d[&lsquo;a&rsquo;] + &lsquo;!!!&rsquo;. Adds &lsquo;!!!&rsquo; to end of that value</p>
+<p>-Main thing to look out for is that d[key] only works if the key is in the dict</p>
+<p>-Can work around this with: if key in dict:</p>
+<p>-Alternatively: if key not in dict &ndash;&gt; d[key] = empty (create a value for that key if its not in the dict)</p>
+<p>-Dict-Count Algorithm: Extremely important dict algorithm pattern:</p>
+<p>A &ldquo;counts&rdquo; dict: We have some big data set &ndash;&gt; Store a key for each distinct value in the data &ndash;&gt; The value for each
+key is the count of occurrences of that key in the data</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">str_count2</span>(strs):
+</span></span><span style="display:flex;"><span>    counts <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> strs:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># fix counts/s if not seen before</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> counts:
+</span></span><span style="display:flex;"><span>            counts[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Unified: now s is in counts one way or</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># another, so this works for all cases:</span>
+</span></span><span style="display:flex;"><span>        counts[s] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> counts
+</span></span></code></pre></div><p>-When we have a variable that is set to some stored memory value, say s = &lsquo;hello&rsquo;, we can also set a = s, so that a
+refers to that same stored value. This is helpful for dictionaries, as we can refer to the memory stored in dictionary
+with another variable.</p>
+<p>-We can also have nested dictionaries where each key of a dictionary points to another dictionary</p>
+<p>-In these cases it is helpful to make a variable which references the inner dictionary, then we can access the contents
+of the inner dictionary without having to do the following: dict[key1][key2].</p>
+<p>-The value inside a dicitonary can be any type of value, and any operators which work on that value should work as
+follows: (Operator x dict[key]).  e.g. d[key].append(~)</p>
+<p>-Given an input string(or list of strings), we can split the string into a list of strings using s.split(&lsquo;any character&rsquo;)</p>
+<p>-To use this list we must set a variable equal to s.split</p>
+<h3 id="error-handling">Error Handling</h3>
+<p>Exceptions and Errors
+An &ldquo;exception&rdquo; in Python halts the program with an error message and notes the line number. You have seen these many,
+many times.</p>
+<p>The last line of the error message describes the specific problem, and the &ldquo;traceback&rdquo; lines above give context about
+the series of function calls / line-numbers which lead to the error. Generally just look at the last couple lines to see
+the error and the line of code where it occurred. We can prompt an exception easily enough with some bad code in the
+interpreter.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s = &lsquo;Hello&rsquo;
+s[9]
+Traceback (most recent call last):
+File &ldquo;<!-- raw HTML omitted -->&rdquo;, line 1, in <!-- raw HTML omitted -->
+IndexError: string index out of range</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Error Handling Rule #1
+As a programmer, what&rsquo;s your responsibility for error conditions that arise during the run?</p>
+<p>The first and simplest rule for error conditions is this: when the program encounters a problem so the computation
+cannot continue, &ldquo;raise an Exception&rdquo; to halt the program with an error message at that point.</p>
+<p>The line raise Exception(&lsquo;message&rsquo;) will raise an exception to halt the program at that line, with the message string
+describing the problem.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>raise Exception(&lsquo;Something has gone terribly wrong&rsquo;)
+Traceback (most recent call last):
+File &ldquo;<!-- raw HTML omitted -->&rdquo;, line 1, in <!-- raw HTML omitted -->
+Exception: Something has gone terribly wrong
+For example, suppose deep in some function, a parameter n must be 10 or more for the computation to continue, we could
+halt the program with an exception like this:</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="raise-exception-if-n-is-too-big">Raise exception if n is too big</h1>
+<p>&hellip;
+if n &gt; 10:
+raise Exception(&rsquo;n should not be more than 10&rsquo;)
+&hellip;
+Whoever is running the program can look at the error message to debug the situation. Say for example, they miss-typed
+the name of a file wrong so the code halted with a FileNotFoundError.</p>
+<h3 id="more-dictionaries">More dictionaries</h3>
+<p>-To access every value in a dictionary we can just loop over it&rsquo;s keys.</p>
+<p>-dict.keys() - returns a list-like collection of the dict keys</p>
+<p>-for key in dict.keys()</p>
+<p>-In effect, this loops over all the contents in the dictionary</p>
+<p>-dict.keys() is list-like: not a list, but looping works</p>
+<p>-Rule: don&rsquo;t modify a thing while looping over it (list, dict)</p>
+<h3 id="lists">Lists</h3>
+<p>-Now we introduce some more operations involving lists.</p>
+<p>-sorted() takes in any linear collection</p>
+<p>-Returns a new list with those elements, sorted into increasing order</p>
+<p>-Numbers are sorted into increasing numeric order</p>
+<p>-Text is sorted into alphabetical order</p>
+<p>-The original list is undisturbed</p>
+<p>-There is a shortcut to loop over the keys</p>
+<p>-Loop over the dict itself: for key in d:</p>
+<p>-Or for key in sorted(d):</p>
+<p>-This loops over the keys, just like d.keys()</p>
+<ul>
+<li>If you have a list-like and need an actual list, you can form one with list()</li>
+</ul>
+<p>-The clean(s) function is used to clean punctuation from the edges of words, like given &lsquo;&ndash;woot!&rsquo; extract just &lsquo;woot&rsquo;.
+It is written as a black-box function with Doctests, of course! The counting code uses this to clean up each word pulled
+from the file.</p>
+<p>-Slices work with lists</p>
+<p>-Exactly like Strings</p>
+<p>-lst[start:end]</p>
+<p>-Elements starting at start</p>
+<p>-Up to but not including end UBNI</p>
+<p>-Creates a new list</p>
+<p>-Populated with elements from original list</p>
+<p>-lst[:] copies the whole list</p>
+<p>-lst[-1] is the last element</p>
+<p>-sorted() takes in list, or list-like collection</p>
+<p>-e.g. range() or dict.keys()&rsquo;</p>
+<p>-sorted uses the operator &lt;</p>
+<p>-5 &lt; 6 -&gt; True</p>
+<p>-&lsquo;apple&rsquo; &lt; &lsquo;banana&rsquo; -&gt; True</p>
+<p>-Creates and returns increasing-order sorted list</p>
+<p>-Original list is not changed</p>
+<p>-int elements - numeric ordering</p>
+<p>-string elements - alphabetical, starting with leftmost char</p>
+<p>-Uppercase before lowercase, deal with this later</p>
+<p>-reverse=True - optional parameter setting</p>
+<p>-Named params like this: no space around =</p>
+<p>-Error to mix int/str elements</p>
+<p>-Don&rsquo;t use too often, as the computation is quite heavy</p>
+<p>-min(), max()</p>
+<p>-These are related to sorted() - returning 1 elem</p>
+<p>-Use this builtin to pick out smallest/largest value</p>
+<p>-Works with several params, or with a list</p>
+<p>-Works with int</p>
+<p>-Works with str</p>
+<p>-Works with anything where &ldquo;&lt;&rdquo; has meaning</p>
+<p>-Error with empty list, must have at least 1 value</p>
+<p>-Note not object noun.verb style, a function like sorted()</p>
+<p>-min()/max() much faster than sorted() - use these if just need the one value</p>
+<p>-Style reminder:</p>
+<p>-Don&rsquo;t use the name of a built-in function as a variable name</p>
+<p>-e.g. don&rsquo;t use &ldquo;min&rdquo; or &ldquo;max&rdquo; as a var name, though it&rsquo;s very tempting!</p>
+<p>-sum()</p>
+<p>-Compute the sum of a collection of ints or floats, like +.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>nums = [1, 2, 1, 5]
+sum(nums)
+9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>-State-Machine Pattern/Strategy</p>
+<p>-A strategy for structuring your code, not another Python feature</p>
+<p>-Have a &ldquo;state&rdquo; variable alongside the loop</p>
+<ol>
+<li>Init the variable before the loop (short for &ldquo;initialize&rdquo;)</li>
+<li>Loop over the elements. For each element, look at or update the state variable</li>
+<li>After the loop, use the state variable to compute the final result</li>
+</ol>
+<p>-Idea: push complexity into the variable, less code overall</p>
+<p>-State-Machine - &ldquo;previous&rdquo; Pattern</p>
+<p>-A classic state-machine technique (CS106B uses this one)</p>
+<p>-Appears optionally in the last part of HW6 Baby Names</p>
+<p>-Challenge: how many elems are the same as the elem to their left</p>
+<p>-Have a &ldquo;previous&rdquo; state var</p>
+<p>-Before the loop, init previous with a harmless value, e.g. None or '&rsquo;</p>
+<p>-Last line in loop: previous = elem</p>
+<p>-Then for each loop iteration:</p>
+<p>-Have current element</p>
+<p>-Have &ldquo;previous&rdquo;, the value from the previous loop iteration</p>
+<p>-Previous pattern:</p>
+<ol>
+<li>
+<p>Init with not-in-list value</p>
+<p>previous = None</p>
+</li>
+</ol>
+<p>-for elem in lst:
+# 2. Use elem and previous in loop</p>
+<pre><code># 3. last line in loop:
+previous = elem
+</code></pre>
+<h2 id="week-8">Week 8</h2>
+<h3 id="tuples">Tuples</h3>
+<p>-Written in parentheses</p>
+<p>-Group a few data items together</p>
+<p>-Types inside can vary &ndash; 2 strings and an int</p>
+<p>-Access like a list: len(), [] work the same</p>
+<p>-Fixed size, typically small</p>
+<p>-Immutable - no change, no append (like string)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>t = (&lsquo;smith&rsquo;, &lsquo;alice&rsquo;, 53635252)</p>
+<p>len(t)
+3
+t[0]
+&lsquo;smith&rsquo;
+t[2]
+53635252
+t[0] = &lsquo;xxx&rsquo;
+TypeError: &rsquo;tuple&rsquo; object does not support item assignment</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Ok but why use this over a list???</p>
+<p>-Tuples are used to group a few data items together</p>
+<p>-The number of elements is small and known ahead of time</p>
+<p>-Elements may not all be of the same type</p>
+<p>-Lists are used when you want to contain many elements</p>
+<p>-Number of elements may not be known ahead of time</p>
+<p>-Can use append to add more</p>
+<p>-Typically elements are all the same type</p>
+<p>-Tuple Assignment = Shortcut
+Here is a neat sort of trick you can do with a tuple. This is a shortcut for the use of =, assigning multiple variables in one step. This is just a little trick, not something you need to use.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>(x, y) = (3, 4)
+x
+3
+y
+4</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>-It&rsquo;s an error if the two sides are not the same len works with lists too</p>
+<p>-A bit obscure, you do not need to use this feature</p>
+<p>-(x,y) == (3,4)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>true</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>-Sorting With Tuples</p>
+<p>Recall function: sorted(lst), return list sorted in increasing order</p>
+<p>Sorting of tuples:</p>
+<ol>
+<li>First sort each tuple by its tuple[0]</li>
+<li>If tuple[0] is the same between two elements (a &ldquo;tie&rdquo;)</li>
+</ol>
+<p>-Fall back to sorting on tuple[1] and so on</p>
+<p>-Lets us combine multiple data items for sorting</p>
+<p>-Like a spreadsheet: sort by column A, then by column B, and so on</p>
+<p>-Say we have len-2 tuples of the form: (&lsquo;ca&rsquo;, &lsquo;palo alto&rsquo;)</p>
+<p>-Try sorting these tuples</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cities = [(&lsquo;ca&rsquo;, &lsquo;zebra&rsquo;), (&lsquo;ca&rsquo;, &lsquo;san jose&rsquo;), (&rsquo;tx&rsquo;, &lsquo;austin&rsquo;), (&rsquo;tx&rsquo;, &lsquo;aardvark&rsquo;), (&lsquo;ca&rsquo;, &lsquo;palo alto&rsquo;)]</p>
+<p>sorted(cities)
+[(&lsquo;ca&rsquo;, &lsquo;palo alto&rsquo;), (&lsquo;ca&rsquo;, &lsquo;san jose&rsquo;), (&lsquo;ca&rsquo;, &lsquo;zebra&rsquo;), (&rsquo;tx&rsquo;, &lsquo;aardvark&rsquo;), (&rsquo;tx&rsquo;, &lsquo;austin&rsquo;)]</p>
+<p>sorted(cities, reverse=True)
+[(&rsquo;tx&rsquo;, &lsquo;austin&rsquo;), (&rsquo;tx&rsquo;, &lsquo;aardvark&rsquo;), (&lsquo;ca&rsquo;, &lsquo;zebra&rsquo;), (&lsquo;ca&rsquo;, &lsquo;san jose&rsquo;), (&lsquo;ca&rsquo;, &lsquo;palo alto&rsquo;)]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="more-dictionary--tuples">More dictionary + tuples</h3>
+<p>-dict.items() - Another Way To Get Dict Data</p>
+<p>-d.items() returns a collection of (key, value) tuples, each len-2</p>
+<p>-d.items() returns all the (key, value) pairs</p>
+<p>-The items represent 100% of the dict&rsquo;s data - a &ldquo;dump&rdquo; of its data</p>
+<p>-With d.keys() we only got half the data, needed to [ ] in to get the values</p>
+<p>-The d.items() collection is in random order</p>
+<p>-sorted(d.items()) gives the items sorted by key(alpha numeric sorting)</p>
+<p>-Can use a similar shortcut inside a for loop. Since we are looping over tuples len-2, can specify two variables, and the loop unpacks each tuple into the variables, here key and value:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>for key, value in sorted(d.items()):
+&hellip;     print(key, value)
+&hellip;
+a alpha
+b beta
+g gamma</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="map-and-lambda">Map and Lambda</h3>
+<p>-Map is a short way to transform a list</p>
+<p>-Lambda is an important way to package some code</p>
+<p>-Lambda code is dense. Another way of saying that it is powerful. Sometimes you feel powerful with computer code because
+the code you write is long. Sometimes you feel even a little more powerful, because the code you write is short!</p>
+<p>-map(fn, list)</p>
+<p>-The map function takes in a function and a list of elements. For each element in the original list, map() calls the
+function, passing in one element from the original list.</p>
+<p>-Each function call to the function returns one result. Map() gathers all the results together into a new list. So if the
+original list is length 5, the function will be called 5 times, each call getting as input one element from the original list.</p>
+<p>A visual of what map() does:</p>
+<p>map(double, [1, 2, 3, 4, 5]) -&gt; [2, 4, 6, 8, 10]</p>
+<p>-Goes over all elements in the list and performs the function operation on that element</p>
+<p>Note: map() Result + list()</p>
+<p>-The result that map() returns is list-like, but is not exactly a list and does not display clearly in the interpreter</p>
+<p>-Therefore we call it like this in the interpreter
+list(map(&hellip;))</p>
+<p>-Thus making a list of the map() result so it prints out correctly</p>
+<p>-This use of list() is not needed generally in production code, we&rsquo;re using it here just to get printing in the
+interpreter</p>
+<p>Thus Far - Function into Function
+The map() function saves us some bookkeeping - it takes care of calling a function a bunch of times, once for each
+element in the input list, and giving us a list of the results. This is a first example of passing a function in as a
+parameter, which is an important advanced technique.</p>
+<p>Pre Lambda
+Structure of above examples without lambda:</p>
+<ol>
+<li>
+<p>def - Do the def first, define the name + code we want to use - e.g. double</p>
+</li>
+<li>
+<p>map - Later, map() refers to function by name - double to get the code</p>
+</li>
+</ol>
+<p>The two steps here seem a little needless? Like could we just do this in one step?</p>
+<p>-Lambda - Function In One Step</p>
+<p>Write an expression that represents the code of a function in one step - no def needed. The lambda lets us write the
+function object part of the def, but without any of the other stuff. The lambda is stripped down - take away everything
+not needed, leaving only the essential to type in.</p>
+<p>Quote about &ldquo;Perfection&rdquo; - Stripped Down
+&ldquo;Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.&rdquo;
+― Antoine de Saint-Exupéry, Airman&rsquo;s Odyssey</p>
+<p>-Lambda Syntax</p>
+<p>&ldquo;lambda&rdquo; is a stripped-down syntax to define computation in 1 line no def, and no name</p>
+<p>lambda has the absolute minimum needed</p>
+<p>Below is a lambda which defines code to double a number</p>
+<p>Syntax:</p>
+<ol>
+<li>The word &ldquo;lambda&rdquo;</li>
+<li>A single parameter and colon</li>
+<li>An expression defining the output of the lambda, no &ldquo;return&rdquo;</li>
+</ol>
+<p>-Possible to have different numbers, but 1 is very common</p>
+<p>-Lambda is great when you need a short function expressed easily, but it&rsquo;s dense.</p>
+<p>-Here is a lambda that takes in a number, returns double that number</p>
+<p>lambda n: 2 * n</p>
+<p>-Lambda Black Box: It&rsquo;s like the lambda just defines the black box code, not bothering with giving it a name.</p>
+<p>-Give the lambda parameter a good name that reflects the type of input, followed by colon</p>
+<p>-A an int input - &ldquo;n:&rdquo;</p>
+<p>-A string input - &ldquo;s:&rdquo;</p>
+<p>-A url input = &ldquo;url:&rdquo;</p>
+<p>-A number representing the mass of something - &ldquo;mass:&rdquo;</p>
+<p>-Having a good name helps with the next step</p>
+<ol start="3">
+<li>Expression</li>
+</ol>
+<p>-Write the expression for the output</p>
+<p>-Fit on one line, use the parameter</p>
+<p>-No &ldquo;return&rdquo;</p>
+<p>-If the code is long .. consider using a &ldquo;def&rdquo; instead</p>
+<p>-Now we have lambda, do we just use it for everything? No. Lambda is good for cases where the code is really short. Your
+program will have situations like that sometimes, and lambda is great for that. But def can do many things lambda cannot</p>
+<p>-Def Features</p>
+<p>-def introduces a name for the code, so we can call it from multiple places</p>
+<p>-Def has room for real code features:</p>
+<p>-Multiple lines</p>
+<p>-If statements</p>
+<p>-Variables</p>
+<p>-Loops</p>
+<p>-Doctests</p>
+<p>-Inline comments</p>
+<p>-Lambda: best without any of that, just short code that fits on one line</p>
+<p>-Custom Sort Lambda - Plan</p>
+<ol>
+<li>Call sorted() as usual</li>
+<li>provide key=lambda to control sorting</li>
+<li>The lambda input is one elem from the list
+The lambda output is the sort-by (proxy) value for that elem</li>
+</ol>
+<p>-Sorted vs. Min Max:
+What code give us the most tasty food? Or the least tasty?</p>
+<p>-Sorting n things is kind of expensive</p>
+<p>-Could sort, take the last item - overly expensive approach</p>
+<p>-Use max(), max takes a key=lambda just like sorted()</p>
+<p>-e.g. pull out most or least tasty food - change &ldquo;sorted&rdquo; to &ldquo;max&rdquo; or &ldquo;min&rdquo;</p>
+<p>-def midpointy(nums):</p>
+<p>(1) Compute mid. (2) Sort by distance from mid (3) Slice.</p>
+<p>mid = (min(nums) + max(nums)) / 2</p>
+<p>close = sorted(nums, key=lambda n: abs(mid - n))</p>
+<p>return sorted(close[:3])</p>
+<p>-When you want to work with midpoints and slices its generally best to use // to get a int</p>
+<h2 id="week-9">Week 9</h2>
+<h3 id="modules">Modules</h3>
+<p>-A module, also known as a library, gathers together code for common problems, ready for your code to use. For example
+the math module contains mathematical functions like sin(), cos().</p>
+<p>-i.e. import math</p>
+<p>-The import brings in a module of code so that code below can use it</p>
+<p>-In CS we generally build code on top of the module code. Modern coding often revolves using the work of others, and so
+importing libraries of code from others saves lots of time.</p>
+<p>-Module = Name + Code + Docs</p>
+<p>-A module has a name, e.g. &ldquo;math&rdquo;</p>
+<p>-There&rsquo;s the code in the module - typically many functions</p>
+<p>-Then there&rsquo;s the documentation &ldquo;docs&rdquo; explaining the use of its functions</p>
+<p>-There are many standard modules that people use&ndash;helps to not memorize a list of modules</p>
+<p>-Other modules are valuable but they are not a standard part of Python. For code using non-standard module to work, the
+module must be installed on that computer via the &ldquo;pip&rdquo; Python tool. e.g. for homeworks we had you pip-install the
+&ldquo;Pillow&rdquo; module with this command</p>
+<p>-Security: Module vs. Supply Chain Attack</p>
+<ol>
+<li>
+<p>Module Requires Trust
+When you install a module on your machine from somewhere - you are trusting that code to run on your machine.
+In very rare cases, bad actors have tampered with modules to include malware in the module, which then runs on your
+machine, steal data, install malware, etc. A so called &ldquo;supply chain attack&rdquo;</p>
+</li>
+<li>
+<p>Well Known / Safe: python.org, Pillow
+Installing code from python.org is very safe, and also very well known modules like Pillow and matplotlib are very safe,
+benefiting from large, active base of users.</p>
+</li>
+</ol>
+<p>-Be more careful if installing a little used module. Prefer code that was released a month ago vs. code that was
+released yesterday, allowing time for the community to notice if something is not right.</p>
+<p>-Module Docs</p>
+<p>-Every module has formal &ldquo;documentation&rdquo; - &ldquo;docs&rdquo;</p>
+<p>-Explain what its functions do</p>
+<p>-Remember abstraction vs. implementation</p>
+<p>-The docs describe the abstractions of the functions, What each function does, How to call it</p>
+<p>-Suppose you have built some useful functions</p>
+<p>-Someone else in your lab wants to use them&hellip;.</p>
+<p>-Them pasting in their own copy is not ideal</p>
+<p>-We have wordcount.py</p>
+<p>-python3 wordcount.py - runs main()</p>
+<p>-wordcount.py is also a module named just &ldquo;wordcount&rdquo;</p>
+<p>-Think of all the defs in wordcount: read_counts(), clean(), print_counts(),</p>
+<p>-import works on wordcount (in the same directory)</p>
+<p>-Access functions as module.xxx just like usual</p>
+<p>-Run python interpreter in wordcount directory to try this</p>
+<p>-Try importing wordcount, calling the read_counts() function</p>
+<p>-Or call wordcount.clean()</p>
+<p>-Style: Good Decomposition = Good Re-Use</p>
+<p>-We write functions with black-box decomposition</p>
+<p>-Function solves one problem</p>
+<p>-Takes in data as parameters</p>
+<p>-Returns result data</p>
+<p>-e.g.read_counts(filename)</p>
+<p>-The function is like a lego piece - can plug in different contexts</p>
+<p>-This structure is also good for re-use across modules</p>
+<p>-The function is not hard-coded to just one situation</p>
+<p>-The function works in future situations, using whatever new data is passed-in</p>
+<p>-A form of generality - the function can be used in new situations</p>
+<p>-JSON is a standard for writing out as text all of the data that makes up a data structure, such that the data structure
+can be re-created from the text. Very common module.</p>
+<p>-In your future projects, the data formats you are most likely to see I would guess are (1) text files, and (2) json.</p>
+<p>-JSON Encoded Format (Details): The JSON encoded format is similar to a Python literal. It uses square brackets, curly
+braces, colons and commas all in ways similar to Python, but with a few differences:</p>
+<ol>
+<li>
+<p>It uses double quote marks for all strings, not a mix of single and double quote marks like we use in Python.</p>
+</li>
+<li>
+<p>It uses backslashes inside each string to encode special chars in the string, so a double quote mark in a string is
+encoded as &quot;. The JSON reading code then un-does the backslashes to get the original text back.</p>
+</li>
+<li>
+<p>The Python boolean values are encoded with lowercase letters: true/false</p>
+</li>
+<li>
+<p>The Python None is encoded as null</p>
+</li>
+</ol>
+<p>Here&rsquo;s the encoded form of above. The big change is that everything uses double quote marks, and we see the backslash is
+used for the last string. (Here I&rsquo;ve separated the items on separate lines for readability, but JSON actually just
+separates them by spaces.)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import json</p>
+<p>json_str = json.dumps(d)  # dump out above dict
+print(json_str)           # produces json text below
+{
+&ldquo;name&rdquo;: &ldquo;Hermione&rdquo;,
+&ldquo;nums&rdquo;: [1, 2, 3, 4, 5],
+&ldquo;safe&rdquo;: false,
+&ldquo;bugs&rdquo;: null,
+&ldquo;text&rdquo;: &ldquo;this is &quot;easy&quot;&rdquo;
+}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>-In JSON a load operation then goes the other direction, reading in JSON text and re-creating the original data structure
+in memory.</p>
+<h3 id="web-stuff">Web stuff</h3>
+<p>-Web browser app has a url (the &ldquo;client&rdquo; side)</p>
+<p>-Web server is running on some machine (the &ldquo;server&rdquo; side)</p>
+<p>-The browser sends a reguest to the server over the internet</p>
+<p>-The server sends back a response data, often HTML, describing the page to show for that url</p>
+<p>-HTML is a text code that describes a page of words and pictures</p>
+<p>-The browser &ldquo;renders&rdquo; the HTML on screen</p>
+<p>-Common request/response data types: HTML JPEG PNG GIF SVG</p>
+<p>-New open video format &ldquo;AV1&rdquo; .. you heard it here first!</p>
+<p>-urllib Demo</p>
+<p>-Python code to request an HTML page by url</p>
+<p>-urllib - making requests to a server, getting back data</p>
+<p>-An example of using a standard module</p>
+<p>-docs - urllib.request docs on python.org</p>
+<p>-Makes a URL look like a local file mostly</p>
+<p>-Read the text of the web page</p>
+<p>-Use s.find() to display a fragment of it</p>
+<p>-Try it with - <a href="https://python.org">https://python.org</a></p>
+<p>-Or - <a href="https://web.stanford.edu/class/cs106a/">https://web.stanford.edu/class/cs106a/</a></p>
+<p>-Internet - TCP/IP Standards</p>
+<p>-Internet - world-wide network built on open standards</p>
+<p>-Open standards: TCP, IP, HTML, JPEG, PNG</p>
+<p>-These are vendor neutral - unbelievably successful pattern</p>
+<p>-No license required</p>
+<p>-No patents required</p>
+<p>-Brings in huge participation</p>
+<p>-Huge participation can create great value</p>
+<p>-Somehow free/open standard have created astronomical economic value</p>
+<p>-Future economics thesis topic for someone</p>
+<ol>
+<li>Packets</li>
+</ol>
+<p>-Say we have 50KB image.jpg</p>
+<p>-50,000 bytes</p>
+<p>-Divide the image into packets</p>
+<p>-Say each packet is 1500 bytes (a common size)</p>
+<p>-Networking does everything in terms of packets</p>
+<ol start="2">
+<li>IP Address</li>
+</ol>
+<p>-Every computer on the internet has an IP address</p>
+<p>-Here looking at IP v4 addresses, v6 addrs some day in the future</p>
+<p>-e.g. 171.64.64.166</p>
+<p>-IP addr is exactly 4 bytes (4 1-byte numbers)</p>
+<p>-Left part encodes &ldquo;neighborhood&rdquo; on internet</p>
+<p>-Just like phone, 650-725-0000</p>
+<p>-e.g. 171.64.xxx.xxx generally Stanford campus</p>
+<p>-e.g. 171.64.64.xxx my floor of Gates building</p>
+<p>-Cannot just make up an IP addr, depends on location</p>
+<ol start="3">
+<li>Router</li>
+</ol>
+<p>-A computer typically connects to a router for service</p>
+<p>-We&rsquo;ll say the router is &ldquo;upstream&rdquo;</p>
+<p>-The router provides the internet service, handling the computer&rsquo;s packets</p>
+<p>-Typically when you connect to wi-fi, you get a router too</p>
+<p>-The router will assign a temporary IP address to the computer</p>
+<p>-The router typically has the IP address ending with &ldquo;.1&rdquo;</p>
+<ol start="4">
+<li>IP Packet - Hopping</li>
+</ol>
+<p>-Say Netflix is sending a packet with 1/100th second of video to your laptop</p>
+<p>-For a computer to send a packet:</p>
+<p>-Label it with the IP address of the source and destination</p>
+<p>-Send it to local router</p>
+<p>-Router in turn sends it on to bigger router</p>
+<p>-The packet proceeds .. hop hop hop .. over to final destination</p>
+<p>-Typical internet packet is going something like 10-20 hops</p>
+<p>-Code To Create Prompt
+Here is the key function, making the prompt. The prompt is just a string the python code is putting together. The code
+uses format strings f&rsquo; ..{expr} ..&rsquo;. The format string has an &lsquo;f&rsquo; to the left of the string. Then curly braces in the
+string enclose expressions. Each expression is evaluated and its result is pasted into the string at that spot. In this
+code, calls to json.dumps(d) are used to compute the json string for each dict, and paste that into the prompt. Recall
+that &ldquo;dump&rdquo; in JSON refers to creating a big string that represents the input data structure.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>EXAMPLE_POEM <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;lecture poem&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tone&#34;</span>: <span style="color:#e6db74">&#34;silly&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;lines&#34;</span>: <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extend_poem</span>(poem):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Given poem dict, AI adds something to make a longer poem,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    which is returned.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;[Suspenseful music plays as the AI thinks...]&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Form the prompt, giving example json, and mentioning</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the poem thus far.</span>
+</span></span><span style="display:flex;"><span>    prompt <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;Return the next line for a poem. &#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;The result should be formatted in json &#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;like this: </span><span style="color:#e6db74">{</span>json<span style="color:#f92672">.</span>dumps(EXAMPLE_POEM)<span style="color:#e6db74">}</span><span style="color:#e6db74">. &#39;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;The poem thus far is </span><span style="color:#e6db74">{</span>json<span style="color:#f92672">.</span>dumps(poem)<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># This is the boilerplate to send the prompt to the AI</span>
+</span></span><span style="display:flex;"><span>    chat_completion <span style="color:#f92672">=</span> CLIENT<span style="color:#f92672">.</span>chat<span style="color:#f92672">.</span>completions<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>        messages<span style="color:#f92672">=</span>[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;content&#34;</span>: prompt,
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>,
+</span></span><span style="display:flex;"><span>        response_format<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;json_object&#34;</span>},
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get the response back from the AI, convert back to a dict</span>
+</span></span><span style="display:flex;"><span>    json_response <span style="color:#f92672">=</span> chat_completion<span style="color:#f92672">.</span>choices[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>content
+</span></span><span style="display:flex;"><span>    poem_new <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(json_response)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> poem_new
+</span></span></code></pre></div><h3 id="list-comprehension">List Comprehension</h3>
+<p>Comprehension 1-2-3</p>
+<p>Nick&rsquo;s mnemonic: re-use syntax of other Python features</p>
+<ol>
+<li>
+<p>Type in a pair of outer brackets [ ]</p>
+</li>
+<li>
+<p>Inside write a foreach for n in nums. Choose an appropriate var name for the loop, e.g. n or s</p>
+</li>
+<li>
+<p>Then the result expression n * n goes on the left</p>
+</li>
+</ol>
+<p>example: squares, * -1, string uppercase</p>
+<p>example. Make the string form of each number with &lsquo;!!&rsquo; after it , like &lsquo;5!!&rsquo;</p>
+<p>Type of output does not need to be the same as the input</p>
+<p>Type of output is just whatever expression is on the left</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> nums <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> [n <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> nums]
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">36</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> [n <span style="color:#f92672">*</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> nums]
+</span></span><span style="display:flex;"><span>[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> strs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;the&#39;</span>, <span style="color:#e6db74">&#39;donut&#39;</span>, <span style="color:#e6db74">&#39;of&#39;</span>, <span style="color:#e6db74">&#39;destiny&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> [s<span style="color:#f92672">.</span>upper() <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> strs]
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;THE&#39;</span>, <span style="color:#e6db74">&#39;DONUT&#39;</span>, <span style="color:#e6db74">&#39;OF&#39;</span>, <span style="color:#e6db74">&#39;DESTINY&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> [str(n) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;!!&#39;</span> <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> nums]
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;1!!&#39;</span>, <span style="color:#e6db74">&#39;2!!&#39;</span>, <span style="color:#e6db74">&#39;3!!&#39;</span>, <span style="color:#e6db74">&#39;4!!&#39;</span>, <span style="color:#e6db74">&#39;5!!&#39;</span>, <span style="color:#e6db74">&#39;6!!&#39;</span>]
+</span></span></code></pre></div><p>-Can add &ldquo;if&rdquo; filter on the right hand side</p>
+<p>-add at right: if n &gt; 3</p>
+<p>-Mnemonic: re-use syntax again</p>
+<p>-Left hand side can be just n to pass value through unchanged</p>
+<p>-Truthy bool(): The bool() function takes any value and returns a formal bool False/True value, so for any value, it
+reveals how Truthy logic will treat that value. You don&rsquo;t typically use bool() in production code. Here we&rsquo;re using it
+to see Python&rsquo;s internal logic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#75715e"># &#34;Empty&#34; values count as False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#ae81ff">0.0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool([])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#75715e"># Anything else counts as True</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool(<span style="color:#e6db74">&#39;yo&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> bool([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>-Truthy Shortcut</p>
+<p>-Truthy logic is just a shortcut test for the empty string or 0 or None. Those are pretty common things to test for, so
+the shortcut is handy. You do not need to use this shortcut in your writing, but you may see it in when reading code.
+Most computer languages use Truthy logic like this, not just Python.</p>
+<h3 id="explanations-for-some-glossed-over-lines">Explanations for some glossed over lines</h3>
+<ol>
+<li>#!/usr/bin/env python3</li>
+</ol>
+<p>#!/usr/bin/env python3</p>
+<p>-This should be the very first line of your python file</p>
+<p>-This indicates that this file contains python-3 code</p>
+<p>-Not a requirement, but a good practice</p>
+<p>-Unix is an old and super influential operating system</p>
+<p>-This is an ancient Unix &ldquo;shebang&rdquo; syntax for specifying the type of a file</p>
+<p>-For more detail see: Shebang-line</p>
+<p>-Most modern Operating Systems include some Unix heritage: Mac OS, Linux, iOS, Android</p>
+<p>-Windows is the exception</p>
+<p>-But windows software can still use that line</p>
+<p>-It calls the main() function when this file is run on the command line.</p>
+<p>&hellip;
+&hellip; python file ..
+&hellip;</p>
+<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:
+main()</p>
+<p>-Float Garbage Digits</p>
+<p>-Float arithmetic is a little imprecise, there is a small error</p>
+<p>-Off at the 15th digit .. there are erroneous &ldquo;garbage&rdquo; digits</p>
+<ol>
+<li>Idea of 1/10th, mathematically pure</li>
+<li>In Python code: looks like this 0.1</li>
+<li>In the computer memory, actually: 0.100000000000013</li>
+</ol>
+<p>-There are some garbage digits way off to the right</p>
+<p>-The Math Will Not Come Out Exactly Right</p>
+<p>-This is a deep feature of float numbers in the computer, applies to all languages</p>
+<p>-The print routine hides a few digits, so often the garbage is hidden</p>
+<p>-But in the computation, the garbage is there</p>
+<p>-Crazy, But Not Actually A Problem</p>
+<p>-Everyone needs to remember:</p>
+<p>-float numbers are generally a little bit wrong</p>
+<p>-(int arithmetic, comes out perfect)</p>
+<p>-The error is typically far less than 1-trillionth part</p>
+<p>-But the error is not zero</p>
+<p>-Most computations can handle an error of 1-trillionth part</p>
+<p>-So not much of a problem in practice</p>
+<p><strong>Important detail:</strong>
+There is one concrete coding rule. Do not use == with float. Exception: 0.0 is reliable for == .Any float value * 0.0
+will be exactly 0.0</p>
+<p>-How To Compare Floats</p>
+<p>-Compare float values</p>
+<p>-Do not use ==</p>
+<p>-Instead use builtin function math.isclose()</p>
+<p>-Or look at abs(a - b)</p>
+<p>-abs(x) - the absolute value function</p>
+<p>-Check if absolute value of difference is very small</p>
+<p>-int Arithmetic is Exact</p>
+<p>-int arithmetic does not have the error problem of float</p>
+<p>-int results are exactly correct and repeatable</p>
+<p>-Except overflow - many languages, have a maximum possible int</p>
+<p>-Int arithmetic that goes over the max will get the wrong answer - aka &ldquo;overflow&rdquo;</p>
+<p>-Uniquely, Python does not have a max int</p>
+<ul>
+<li></li>
+</ul>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#week-1">Week 1</a>
+      <ul>
+        <li><a href="#broad-basics-of-computer-science">Broad Basics of Computer Science:</a></li>
+        <li><a href="#python-syntax">Python Syntax:</a></li>
+        <li><a href="#loops-and-logic-operations">Loops and Logic Operations:</a></li>
+        <li><a href="#coding-style">Coding Style</a></li>
+        <li><a href="#misc-keyboard-shortcuts">Misc. Keyboard Shortcuts</a></li>
+        <li><a href="#bigger-picture-of-programs-and-how-to-decompose-a-program">Bigger Picture of Programs and How to Decompose a Program</a></li>
+        <li><a href="#calling-functions">Calling Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-2">Week 2</a>
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#digital-images">Digital Images</a></li>
+        <li><a href="#for-loop">For Loop</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-3">Week 3</a>
+      <ul>
+        <li><a href="#deciphering-functions">Deciphering Functions</a></li>
+        <li><a href="#boolean-values">Boolean Values</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#else-elif-and-more-if">Else, Elif, and More If</a></li>
+        <li><a href="#grids">Grids</a></li>
+        <li><a href="#doctests">Doctests</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#debugging-techniques">Debugging Techniques</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-4">Week 4</a>
+      <ul>
+        <li><a href="#string-innot-in">String in/not in</a></li>
+        <li><a href="#andor-in-conditional-statements">And/Or in conditional statements</a></li>
+        <li><a href="#function-improvement-strategy">Function Improvement Strategy</a></li>
+        <li><a href="#notes-about-elif">Notes about Elif</a></li>
+        <li><a href="#string-slices">String Slices</a></li>
+        <li><a href="#leveraging-patterns">Leveraging patterns</a></li>
+        <li><a href="#value-types">Value types</a></li>
+        <li><a href="#file-reading-and-txt-stuff">File reading and .txt stuff</a></li>
+        <li><a href="#more-command-line">More Command Line</a></li>
+        <li><a href="#foreach-loops">Foreach loops</a></li>
+        <li><a href="#lists-finally">Lists FINALLY</a></li>
+        <li><a href="#foreach-on-lists">Foreach on lists</a></li>
+        <li><a href="#constants">Constants</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-5">Week 5</a>
+      <ul>
+        <li><a href="#writing-good-code">Writing good code</a></li>
+        <li><a href="#bits">Bits</a></li>
+        <li><a href="#more-of-how-computers-actually-work">More of How Computers Actually Work</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-6">Week 6</a>
+      <ul>
+        <li><a href="#more-ifwhile-loops">More if/while loops</a></li>
+        <li><a href="#boolean-expressions">Boolean Expressions</a></li>
+        <li><a href="#style-bit">Style bit</a></li>
+        <li><a href="#canvas-drawing-">Canvas Drawing :/</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-7">Week 7</a>
+      <ul>
+        <li><a href="#dictionaries">Dictionaries!!!</a></li>
+        <li><a href="#error-handling">Error Handling</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#more-dictionaries">More dictionaries</a></li>
+        <li><a href="#lists">Lists</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-8">Week 8</a>
+      <ul>
+        <li><a href="#tuples">Tuples</a></li>
+        <li><a href="#more-dictionary--tuples">More dictionary + tuples</a></li>
+        <li><a href="#map-and-lambda">Map and Lambda</a></li>
+      </ul>
+    </li>
+    <li><a href="#week-9">Week 9</a>
+      <ul>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#web-stuff">Web stuff</a></li>
+        <li><a href="#list-comprehension">List Comprehension</a></li>
+        <li><a href="#explanations-for-some-glossed-over-lines">Explanations for some glossed over lines</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&text=CS%20106%2f61A%20Notes" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&is_video=false&description=CS%20106%2f61A%20Notes" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=CS%20106%2f61A%20Notes&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&title=CS%20106%2f61A%20Notes" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&name=CS%20106%2f61A%20Notes&description=Intro%20CS%20notes" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fcs-61a-notes%2f&t=CS%20106%2f61A%20Notes" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  Max Oussoren 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
