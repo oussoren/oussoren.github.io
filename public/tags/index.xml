@@ -6,20 +6,48 @@
     <description>Recent content in Tags on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Math</title>
-      <link>https://example.org/tags/math/</link>
-      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/math/</guid>
+      <title>Cpp</title>
+      <link>https://example.org/tags/cpp/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Finance</title>
+      <link>https://example.org/tags/finance/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/finance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gaming</title>
+      <link>https://example.org/tags/gaming/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/gaming/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
       <link>https://example.org/tags/programming/</link>
-      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
       <guid>https://example.org/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://example.org/tags/python/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Math</title>
+      <link>https://example.org/tags/math/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/math/</guid>
       <description></description>
     </item>
   </channel>

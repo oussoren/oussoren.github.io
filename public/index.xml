@@ -6,8 +6,22 @@
     <description>Recent content on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poker Bot Project</title>
+      <link>https://example.org/posts/poker-bot-project/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/poker-bot-project/</guid>
+      <description>&lt;h1 id=&#34;poker-bot&#34;&gt;Poker Bot&lt;/h1&gt;&#xA;&lt;p&gt;Built an Object-Oriented Poker Environment that tracks everything from player action history to hand strength and runs smoothly in all three standard rulesets. Created standard bots of all playstyles(from loose and aggressive to tight and defensive) based off of standard heuristics. Currently working on implementing a ML Entity to be trained off of public player action history and a collection of game data from professional poker matches.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hand Evaluation&lt;/strong&gt;: Accurately ranks poker hands from high card to royal flush&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pot Odds Calculation&lt;/strong&gt;: Determines the mathematical probability of winning&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Betting Strategy&lt;/strong&gt;: Makes optimal betting decisions based on game theory&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt;: Clean Qt-based interface for interaction&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;technical-details&#34;&gt;Technical Details&lt;/h2&gt;&#xA;&lt;p&gt;The bot is written in C++ for performance and uses the Qt framework for the GUI. The core algorithms handle:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stock Scraper Project</title>
+      <link>https://example.org/posts/stock-scraper-project/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/stock-scraper-project/</guid>
+      <description>&lt;h1 id=&#34;stock-info-scraper&#34;&gt;Stock Info Scraper&lt;/h1&gt;&#xA;&lt;p&gt;A Python tool I developed for scraping and analyzing stock market data.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;I built this project to automate and collect stock information and perform stock analysis to speed up the process of analyzing&#xA;stocks for investment. In future versions I hope to add sector comparisons to provide more valuable information such as&#xA;how the stock is performing relative to the rest of the sector and if it seems to be over/under-valued.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>about</title>
       <link>https://example.org/about/about/</link>
