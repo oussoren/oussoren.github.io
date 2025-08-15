@@ -73,6 +73,8 @@ DEFINES     +=  main=qMain qMain=studentMain
 # Afterward we glob-add files to SOURCES ourselves. Operator *= will unique
 # entries, so no worries about duplicates
 SOURCES         *=  "" \
+    aggrobot.cpp \
+    balancedbot.cpp \
     card.cpp \
     deck.cpp \
     gamemanager.cpp \
@@ -80,8 +82,11 @@ SOURCES         *=  "" \
     hand.cpp \
     player.cpp \
     randombot.cpp \
-    ruleset.cpp
+    ruleset.cpp \
+    tightbot.cpp
 HEADERS         *=  "" \
+    aggrobot.h \
+    balancedbot.h \
     card.h \
     deck.h \
     gamemanager.h \
@@ -90,7 +95,8 @@ HEADERS         *=  "" \
     player.h \
     poker_info.h \
     randombot.h \
-    ruleset.h
+    ruleset.h \
+    tightbot.h
 
 # Gather any .cpp or .h files within the project folder (student/starter code).
 # Second argument true makes search recursive
