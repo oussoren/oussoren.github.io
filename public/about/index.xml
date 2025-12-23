@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Max Oussoren</title>
-    <link>https://example.org/about/</link>
+    <link>http://localhost:1313/about/</link>
     <description>Recent content in Abouts on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
-      <link>https://example.org/about/about/</link>
+      <link>http://localhost:1313/about/about/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/about/about/</guid>
-      <description>&lt;h2 id=&#34;about&#34;&gt;about&lt;/h2&gt;&#xA;&lt;p&gt;My name is Max&lt;/p&gt;</description>
+      <guid>http://localhost:1313/about/about/</guid>
+      <description>&lt;h2 id=&#34;about&#34;&gt;about&lt;/h2&gt;&#xA;&lt;p&gt;Hi, I&amp;rsquo;m Max. I&amp;rsquo;m a Stanford sophomore studying Math with a Statistics co-term, drawn to the challenge of using rigorous&#xA;analytical thinking to tackle complex problems. What excites me most is finding the underlying patterns and logic in&#xA;messy, real-world situations&amp;ndash;whether that&amp;rsquo;s through mathematical proofs, statistical modeling, or data analysis. I&amp;rsquo;m&#xA;genuinely curious about how quantitative methods can create meaningful impact across different fields, from healthcare&#xA;to AI and beyond. Through my coursework and projects, I&amp;rsquo;ve developed skills in mathematical&#xA;reasoning, statistical analysis, and programming, but I&amp;rsquo;m most energized when I can collaborate with others and apply&#xA;these tools to solve problems that actually matter.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
