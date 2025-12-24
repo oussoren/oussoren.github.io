@@ -92,11 +92,11 @@ An alternative to this linear algebra approach is a **Monte Carlo Simulation**.
 
 Below is the calculated infection risk over a 2-hour window in a 9x9 room. Notice the characteristic "absorbing" curve: as time progresses, the probability mass is trapped in the terminal state, ensuring that the cumulative risk strictly increases.
 
-![Infection Risk Over Time](/images/infection_plot.png)
+![Infection Risk Over Time](images/infection_plot.png)
 
 I also included a heat map to indicate how your position in the room affects your resulting probability of getting sick:
 
-![Infection Risk Heat-Map](/images/infection_heatmap.png)
+![Infection Risk Heat-Map](images/infection_heatmap.png)
 
 ---
 
