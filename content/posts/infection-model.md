@@ -1,7 +1,7 @@
 +++
 title = 'Infection Model'
 date = '2025-12-23'
-draft = true
+draft = false
 tags = ["programming", "python", "math"]
 +++
 
