@@ -45,7 +45,7 @@ I was left with a markov matrix, which I could then take k-powers to represent k
 by my initial state vector and look at the resulting final column entry which would represent the desired probability of
 getting sick after k-moments in the room.
 
-![Project Visualization](/static/images/absorb_proj_desc.jpg)
+![Project Visualization](/public/static/images/absorb_proj_desc.jpg)
 
 ## Notes and Nuances
 
@@ -92,11 +92,11 @@ An alternative to this linear algebra approach is a **Monte Carlo Simulation**.
 
 Below is the calculated infection risk over a 2-hour window in a 9x9 room. Notice the characteristic "absorbing" curve: as time progresses, the probability mass is trapped in the terminal state, ensuring that the cumulative risk strictly increases.
 
-![Infection Risk Over Time](/static/images/infection_plot.png)
+![Infection Risk Over Time](/public/static/images/infection_plot.png)
 
 I also included a heat map to indicate how your position in the room affects your resulting probability of getting sick:
 
-![Infection Risk Heat-Map](/static/images/infection_heatmap.png)
+![Infection Risk Heat-Map](/public/static/images/infection_heatmap.png)
 
 ---
 
@@ -315,7 +315,6 @@ def generate_visual(width, s_idx, h_idx, time_steps=120):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
 
-    # SAVE THIS to your Hugo images folder
     os.makedirs('static/images', exist_ok=True)
 
     plt.savefig('static/images/infection_plot.png', dpi=300)

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Analysis Notes</title>
+      <link>http://localhost:1313/posts/analysis-notes/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/analysis-notes/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;Here are my notes for my course in real-analysis. The course textbook was Ross-Elementary Analysis. The course covered&#xA;up until uniform convergence and the Weierstrass M-test. I supplemented some of the gaps in content with&#xA;Stephen Abbott&amp;rsquo;s Understanding Analysis textbook for concepts such as measure and point-set topology etc.&lt;/p&gt;&#xA;&lt;h1 id=&#34;chapter-1-the-real-numbers&#34;&gt;Chapter 1: The Real Numbers&lt;/h1&gt;&#xA;&lt;h3 id=&#34;quick-overview&#34;&gt;Quick Overview&lt;/h3&gt;&#xA;&lt;p&gt;Analysis begins with a rigorous construction of the number systems we use. While Calculus relies on computational rules, Analysis relies on the axiomatic properties of the set of real numbers, denoted $\mathbf{R}$. This chapter builds $\mathbf{R}$ from the ground up, starting with the natural numbers ($\mathbf{N}$) and moving through the field and order axioms, culminating in the Completeness Axiom—the property that distinguishes $\mathbf{R}$ from the rational numbers ($\mathbf{Q}$) and allows for the existence of limits.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Infection Model</title>
       <link>http://localhost:1313/posts/infection-model/</link>
