@@ -439,9 +439,6 @@ Continuity is preserved under addition, scalar multiplication, product, and quot
 **Theorem 17.4 (Composition):**
 If $f$ is continuous at $x_0$ and $g$ is continuous at $f(x_0)$, then $g \circ f$ is continuous at $x_0$.
 
-### Topological Characterization (The Missing Piece)
-Your notes likely emphasized that continuity respects the structure of open sets. This is the definition used in more advanced topology courses.
-
 **Theorem 17.5 (Topological Characterization of Continuity):**
 A function $f: \mathbf{R} \to \mathbf{R}$ is continuous **on $\mathbf{R}$** if and only if for every open set $V \subseteq \mathbf{R}$, the preimage $f^{-1}(V)$ is an open set.
 *Motto:* "The inverse image of an open set is open.".
@@ -513,12 +510,6 @@ To show a limit does not exist, find two sequences $(x_n) \to c$ and $(y_n) \to 
 
 **Theorem 20.6 (Continuity via Limits):**
 $f$ is continuous at $c$ if and only if $\lim_{x \to c} f(x)$ exists and equals $f(c)$.
-
-Here are the complete notes for Chapter 5: The Derivative, covering Sections 28 through 31. I have synthesized the material from your lecture notes (lec20, lec22) and the textbook to ensure every major theorem—including the Chain Rule, Mean Value Theorem, L'Hospital's Rule, and Taylor's Theorem—is included.
-
-Copy and paste this directly into your analysis-notes.md.
-
-Markdown
 
 # Chapter 5: The Derivative
 
