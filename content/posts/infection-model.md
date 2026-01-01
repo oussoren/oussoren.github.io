@@ -51,7 +51,7 @@ I was left with a markov matrix, which I could then take k-powers to represent k
 by my initial state vector and look at the resulting final column entry which would represent the desired probability of
 getting sick after k-moments in the room.
 
-![Project Visualization](/oussoren.github.io/images/absorb_proj_desc.jpg)
+![Project Visualization](/images/absorb_proj_desc.jpg)
 
 ## Notes and Nuances
 
