@@ -6,8 +6,15 @@
     <description>Recent content in Programming on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Probability in CS Notes</title>
+      <link>http://localhost:1313/posts/intro-probability-notes/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/intro-probability-notes/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;Here are my notes for my introductory course in probability theory and its applications to computer science. Note this&#xA;is from my first course in probability, so the mathematical rigor is&amp;hellip;well it&amp;rsquo;s lacking. But I am taking/have taken a&#xA;formal course in probability theory and my notes will be/are available under &amp;ldquo;probability theory notes&amp;rdquo;. This course was&#xA;primarily application focused and as such the notes remain somewhat bare-bones. I have tried to supplement them with&#xA;examples(hopefully) that illustrate what the course focused on. I found that the variety and creativity of the&#xA;problems that were designed for the course was the real value which was offered to me as a student.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Infection Model</title>
       <link>http://localhost:1313/posts/infection-model/</link>
