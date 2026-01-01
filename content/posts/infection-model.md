@@ -24,6 +24,7 @@ interval discretely and represent each space in the room as an entry into a matr
 all the possible states of the room along with the positions of both the sick and healthy person into one composite matrix-**M**.
 We end up with a matrix where the ith row represents the ith state of all the possible states of the sick and healthy
 persons, and the jth column represents the possible transition states of both individuals from that ith state.
+
 From there I had the idea that this could be used for a random walk representation, where the rows of this matrix sum to 
 1 in order to represent the idea that the probability that moving from any one state in the room to another should
 sum to 1. The next idea was to, as in the assumptions represent the probability of getting sick at any moment 
@@ -31,21 +32,26 @@ in terms of the distance between the sick and healthy person(which could be calc
 This could be represented in terms of a diagonal matrix, **P**, where the entries are the probability of getting sick--or its
 compliment to represent the probability of staying healthy in the new jth state. I could then multiply these matrices 
 together to get a matrix, **Q**, representing the probability of staying healthy in this room at a particular moment.
+
 From there I realized that there were some issues, like my inability to keep track of sickness, ensure that sick people stay that
 way, and inability to take advantage of the nice properties of markov matrices. To approach this, I figured that I could represent my
 starting entry into this pseudo-random walk as just a vector with zeros except for the jth column representing the starting
-state--attached to this vector would be an extra entry to represent their probability of being sick. From here I realized
+state--attached to this vector would be an extra entry to represent their probability of being sick. 
+
+From here I realized
 that if I consider the sum of the rows in my **Q** matrix, that represents the probability of staying healthy if you
 start in that ith state, and thus I could take the compliment of this sum and that would be my probability of getting sick
 in that state. Thus, I accumulate a vector that represents my probability of getting sick for each possible state, and
-I could attach this to my **Q** matrix to make it markov. I still had the issue of potentially escaping the sick state,
+I could attach this to my **Q** matrix to make it markov. 
+
+I still had the issue of potentially escaping the sick state,
 so I added a final row to the bottom of the matrix full of zeros except for the sick column which would be a 1, that way
 if an individual gets sick, then during the process of matrix-vector multiplication they would be ensured to stay sick.
 I was left with a markov matrix, which I could then take k-powers to represent k-moments of, and I could then multiply this
 by my initial state vector and look at the resulting final column entry which would represent the desired probability of
 getting sick after k-moments in the room.
 
-![Project Visualization](/public/static/images/absorb_proj_desc.jpg)
+![Project Visualization](/static/images/absorb_proj_desc.jpg)
 
 ## Notes and Nuances
 
@@ -92,11 +98,11 @@ An alternative to this linear algebra approach is a **Monte Carlo Simulation**.
 
 Below is the calculated infection risk over a 2-hour window in a 9x9 room. Notice the characteristic "absorbing" curve: as time progresses, the probability mass is trapped in the terminal state, ensuring that the cumulative risk strictly increases.
 
-![Infection Risk Over Time](/public/static/images/infection_plot.png)
+![Infection Risk Over Time](/static/images/infection_plot.png)
 
 I also included a heat map to indicate how your position in the room affects your resulting probability of getting sick:
 
-![Infection Risk Heat-Map](/public/static/images/infection_heatmap.png)
+![Infection Risk Heat-Map](/static/images/infection_heatmap.png)
 
 ---
 
