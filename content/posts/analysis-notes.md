@@ -233,7 +233,8 @@ Every bounded sequence contains a convergent subsequence.
 ### My Proof of Bolzano-Weierstrass
 Most textbooks use the Nested Interval Property. I have derived the proof using a "Divide and Conquer" interval halving strategy:
 
-![Proof of Bolzano-Weierstrass](/images/bw_proof.jpeg)
+![Proof of Bolzano-Weierstrass](/static/images/analysis/bw_proof.png)
+![Proof of Bolzano-Weierstrass](/static/images/analysis/bw_proof2.png)
 
 **Key Insight:** Since the sequence is bounded, it lives in some interval $I_0$. Split $I_0$ in half. By the Pigeonhole Principle, one half must contain infinitely many points. Call this $I_1$. Repeat this process to get a nested sequence $I_k$ whose size shrinks to 0. By the Nested Interval Property, there is a single point $x$ in the intersection, which is the limit of our subsequence.
 
@@ -767,6 +768,9 @@ In Chapter 2, we studied sequences of *numbers* $(a_n)$. Now we study sequences 
 ### Pointwise Convergence
 This is the most natural way to define convergence for functions: we just look at what happens at each individual point $x$.
 
+![pw_convergence](/static/images/analysis/func_seq1.jpg)
+![pw_convergence2](/static/images/analysis/func_seq2.jpg)
+
 **Definition 23.1 (Pointwise Convergence):**
 A sequence of functions $(f_n)$ defined on a set $D$ converges **pointwise** to $f$ on $D$ if for every $x \in D$:
 $$\lim_{n \to \infty} f_n(x) = f(x)$$
@@ -868,3 +872,4 @@ For any power series $\sum a_n x^n$, there exists $R \in [0, \infty]$ such that:
 **Theorem 26.5 (Uniform Convergence of Power Series):**
 If a power series has radius of convergence $R > 0$, it converges **uniformly** on any closed interval $[-r, r]$ where $0 < r < R$.
 * *Consequence:* Power series define continuous, differentiable, and integrable functions inside their radius of convergence. You can differentiate them term-by-term.
+

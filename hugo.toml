@@ -6,7 +6,7 @@ theme = 'cactus'
 [params]
   mathjax = true  # not required
   colortheme = "dark" # dark, light, white, or classic
-  description = "Hi, welcome to my personal website!"
+  description = "Welcome to Max's personal website. You can find projects and class notes recorded under the posts page, and you can read about my interests on the about page!"
   mainSectionTitle = "Posts"
   icon = "/images/favicon.ico"
 

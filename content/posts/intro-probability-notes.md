@@ -529,7 +529,7 @@ Bridge is a cooperative game where players must estimate the strength of their p
 **Hand Strength Metric:**
 In Bridge, the "strength" of a hand ($H$) is often calculated by a weighted sum of high cards:
 * Ace = 4, King = 3, Queen = 2, Jack = 1.
-* $H = 4(\#A) + 3(\#K) + 2(\#Q) + 1(\#J)$.
+* $H = 4(num aces) + 3(num kings) + 2(num queens) + 1(num jacks)$.
 
 ### 1. Expectation of Hand Strength
 We can calculate the expected strength of a randomly dealt 13-card hand using Linearity of Expectation.
