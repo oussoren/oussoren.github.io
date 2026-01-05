@@ -2,7 +2,7 @@
 title: "Poker Bot Project"
 date: 2025-08-14
 draft: false
-tags: ["programming", "cpp", "gaming"]
+tags: ["programming"]
 ---
 
 # Poker Bot
