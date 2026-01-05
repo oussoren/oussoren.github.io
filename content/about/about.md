@@ -15,3 +15,13 @@ genuinely curious about how quantitative methods can create meaningful impact ac
 to AI and beyond. Through my coursework and projects, I've developed skills in mathematical
 reasoning, statistical analysis, and programming, but my true passion lies in making cool things with others and applying
 these tools to solve problems that actually matter.
+
+## Contact & Resume
+
+If you're curious about any of my projects or want to discuss some technical projects with me, you can contact me:
+
+* **Email:** [oussoren@stanford.edu](mailto:oussoren@stanford.edu)
+* **LinkedIn:** [linkedin.com/in/max-oussoren](https://www.linkedin.com/in/max-oussoren-610202335/)
+* **GitHub:** [github.com/oussoren](https://github.com/oussoren)
+
+[Download My Resume]({{< relref "/resume.pdf" >}}){.btn-resume}

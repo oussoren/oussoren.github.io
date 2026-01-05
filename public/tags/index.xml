@@ -30,24 +30,10 @@
       <description></description>
     </item>
     <item>
-      <title>Cpp</title>
-      <link>http://localhost:1313/tags/cpp/</link>
-      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cpp/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Finance</title>
       <link>http://localhost:1313/tags/finance/</link>
       <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/finance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gaming</title>
-      <link>http://localhost:1313/tags/gaming/</link>
-      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gaming/</guid>
       <description></description>
     </item>
   </channel>
