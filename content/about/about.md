@@ -24,4 +24,4 @@ If you're curious about any of my projects or want to discuss some technical pro
 * **LinkedIn:** [linkedin.com/in/max-oussoren](https://www.linkedin.com/in/max-oussoren-610202335/)
 * **GitHub:** [github.com/oussoren](https://github.com/oussoren)
 
-[Download My Resume]({{< relref "/resume.pdf" >}}){.btn-resume}
+<a href="/resume.pdf" class="btn-resume">Download Resume</a>
