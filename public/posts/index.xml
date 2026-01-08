@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning Notes</title>
+      <link>http://localhost:1313/posts/ml-notes/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ml-notes/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;Here are my notes for CS229, a graduate class in Machine Learning.&lt;/p&gt;&#xA;&lt;h1 id=&#34;supervised-learning&#34;&gt;Supervised Learning&lt;/h1&gt;&#xA;&lt;p&gt;The thing that distinguishes supervised learning from other machine learning is the fact that there are labels associated&#xA;with our features.&lt;/p&gt;&#xA;&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;&#xA;&lt;p&gt;In regression we introduce a model that describes a relationship between our features and our outputs. f(x) &amp;ndash; our model&#xA;describes the expected relationship between x and y. In regression our model for a specific training point will output&#xA;$f(x_i)$. We will also have the actual value for that training point $x_i$, $y_i$. We consider the difference between our&#xA;model and the output, we call it epsilon i. Our expectation for this error, will be normally distributed with mean 0.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Probability in CS Notes</title>
       <link>http://localhost:1313/posts/intro-probability-notes/</link>

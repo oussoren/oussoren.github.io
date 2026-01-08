@@ -2,7 +2,7 @@
 title = 'Probability in CS Notes'
 date = '2025-12-31'
 draft = false
-tags = ["math", "programming", "python"]
+tags = ["math", "programming", "python", "probability"]
 +++
 
 # Overview

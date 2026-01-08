@@ -2,7 +2,7 @@
 title = 'Infection Model'
 date = '2025-12-23'
 draft = false
-tags = ["programming", "python", "math"]
+tags = ["programming", "python", "math", "probability", "linear algebra"]
 +++
 
 # Absorbing Markov Chain Infection Model

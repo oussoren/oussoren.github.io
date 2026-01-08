@@ -2,7 +2,7 @@
 title = 'Real-Analysis Notes'
 date = '2025-12-30'
 draft = false
-tags = ["math"]
+tags = ["math", "analysis"]
 +++
 
 # Overview

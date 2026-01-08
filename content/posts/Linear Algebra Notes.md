@@ -4,7 +4,7 @@ title = "Linear Algebra Notes"
 date = "2024-12-19"
 description = "My collection of linear algebra related thoughts and lessons"
 math = true
-tags = ["math", "programming"]
+tags = ["math", "programming", "linear algebra"]
 +++
 
 # Chapter Notes
