@@ -16,6 +16,8 @@ to AI and beyond. Through my coursework and projects, I've developed skills in m
 reasoning, statistical analysis, and programming, but my true passion lies in making cool things with others and applying
 these tools to solve problems that actually matter.
 
+スタンフォード大学でコンピュータサイエンスと数学を専攻している2年生です。現在は機械学習と技術戦略の交点に焦点を当て、高次元データのモデリングを通じた市場の『ホワイトスペース』特定に取り組んでいます。また、スタンフォード日本交換会議（SJEC）の学術担当役員を務めており、現在は日本語能力試験N2合格に向けて学習を進めています.
+
 ## Contact & Resume
 
 If you're curious about any of my projects or want to discuss some technical projects with me, you can contact me:

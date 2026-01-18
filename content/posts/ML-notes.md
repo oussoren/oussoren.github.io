@@ -24,18 +24,19 @@ model and the output, we call it epsilon i. Our expectation for this error, will
 ### House Example
 Suppose you have a dataset of information about houses. For simplicity's sake, say our data for each house is just 
 the square footage, and our label or output is the price of our output. For this example we have a linear regression model
-where $f(x)= w_0 + w_1x, and y_i = w_0 + w_1x_i + \epsilon_i$. In order to choose the line that best fits our data, we will
+where $$f(x)= w_0 + w_1x, and y_i = w_0 + w_1x_i + \epsilon_i$$. In order to choose the line that best fits our data, we will
 consider the residual sum of squares(sum of square differences between our prediction and the label), and we choose the
-parameters w_0 and w_1 that minimize the cost (our RSS). $min(w_0,w1)\sum_{i=1}^{N}(y_i - [w_0 + w_1x_i])^2$.
+parameters w_0 and w_1 that minimize the cost (our RSS). $$min(w_0,w1)\sum_{i=1}^{N}(y_i - [w_0 + w_1x_i])^2$$.
 
 ### Polynomial regression:
 Our data doesn't look like a simple linear relationship when we plot it. We assume the model is as such,
-$y_i = w_0*1 + w_1x_i + w_2x_i^2 + ... + w_px_i^p + \epsilon_i$.
+$$y_i = w_0*1 + w_1x_i + w_2x_i^2 + ... + w_px_i^p + \epsilon_i$$. Note this is still a linear function on the parameters.
+
 
 ### Generic Featurized Linear Regression:
-$y_i = w_0*1 + w_1h_1(x_i) + w_2h_2(x_i) + ... + w_ph_p(x_i) + \epsilon_i$. Where h(x) is some function of our feature.
+$$y_i = w_0*1 + w_1h_1(x_i) + w_2h_2(x_i) + ... + w_ph_p(x_i) + \epsilon_i$$. Where h(x) is some function of our feature.
 i.e. h(x)=log(beds) * log(baths) where x is now a vector and beds and baths are features.
-There is an easier way to write the generic model, which instead of writing $\sum_{j=0}^{D-(num features)}w_jh_j(x_i) + \epsilon_i = w\cdot{h(x_i)} + \epsilon_i$
+There is an easier way to write the generic model, which instead of writing $$\sum_{j=0}^{D-(num features)}w_jh_j(x_i) + \epsilon_i = w\cdot{h(x_i)} + \epsilon_i$$
 
 *inputs v. features*
 
@@ -43,8 +44,8 @@ Suppose we have a table of observations where our ith row is observation i and o
 of inputs, but we can choose our features -- essentially manipulations (h(x)). This feature is a specific transformation of that raw data designed to make the relationship with the output ($y$) easier for a linear model to see.
 
 ### Matrix Notation
-For observaiton i,
-$y_i = \sum_{j=0}^Dw_jh_j(x_i) + \epsilon_i$.
+For observation i,
+$$y_i = \sum_{j=0}^Dw_jh_j(x_i) + \epsilon_i$$.
 We need to do this over every training point. Suppose our dataset is actually a matrix where the ith row is training point
 i. Call this matrix $H$. Thus, our vector of observations, y, can be represented as such,
 $y = H(w) + \epsilon$. Where these variables are vectors and $H$ represents the linear transformation of our observations/features.
