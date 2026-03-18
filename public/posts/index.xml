@@ -16,6 +16,13 @@
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;Here are my notes for CS229, a graduate class in Machine Learning.&lt;/p&gt;&#xA;&lt;h1 id=&#34;supervised-learning&#34;&gt;Supervised Learning&lt;/h1&gt;&#xA;&lt;p&gt;The thing that distinguishes supervised learning from other machine learning is the fact that there are labels associated&#xA;with our features.&lt;/p&gt;&#xA;&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;&#xA;&lt;p&gt;In regression we introduce a model that describes a relationship between our features and our outputs. f(x) &amp;ndash; our model&#xA;describes the expected relationship between x and y. In regression our model for a specific training point will output&#xA;$f(x_i)$. We will also have the actual value for that training point $x_i$, $y_i$. We consider the difference between our&#xA;model and the output, we call it epsilon i. Our expectation for this error, will be normally distributed with mean 0.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Probability Theory Notes</title>
+      <link>http://localhost:1313/posts/probability-theory-notes/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/probability-theory-notes/</guid>
+      <description>&lt;h1 id=&#34;probability-spaces-and-counting&#34;&gt;Probability spaces and Counting&lt;/h1&gt;&#xA;&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt; $\to$ Outcomes ($\Omega$)&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e.g., Rolling a die $\to {1, 2, 3, 4, 5, 6}$&lt;/li&gt;&#xA;&lt;li&gt;Flip a coin $\to {H, T}$&lt;/li&gt;&#xA;&lt;li&gt;Draw a card $\to {1, \dots, 52}$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The set of all outcomes is called the &lt;strong&gt;SAMPLE SPACE&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;The sample space can be &lt;strong&gt;FINITE&lt;/strong&gt; or &lt;strong&gt;INFINITE&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Probability measure&lt;/strong&gt; on $\Omega$ sample space is a function $P: \Omega \to [0, 1]$ which assigns a probability to each outcome in sample space.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Probability in CS Notes</title>
       <link>http://localhost:1313/posts/intro-probability-notes/</link>
       <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
