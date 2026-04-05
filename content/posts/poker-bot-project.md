@@ -10,6 +10,9 @@ Many ML models are trained to perform well against optimal or near-optimal behav
 
 I modify Deep CFR, a self-play learning method that uses neural networks to approximate action preferences. My project investigates smoothing this learning process to produce strategies that perform better against imperfect opponents. The input to the model is the information state $I$, which consists of the private card and the public betting history. The model outputs a probability distribution over the legal actions $a$ (check, bet, etc.).
 
+## TLDR
+<a href="/poker_project.pdf" class="btn-resume">See Summary</a>
+
 ## Related Work
 Counterfactual Regret Minimization (CFR) solves two-player zero-sum imperfect-information games by breaking down global regret into counterfactual regrets. Deep CFR uses neural networks to approximate these regrets from sampled traversals. I test whether a moderate smoothing of regret matching inside Deep CFR changes performance by evaluating cross-play EV against MCCFR opponents of varying strength.
 
@@ -84,4 +87,4 @@ Mean policy entropy changed only slightly:
 * **SoftRM ($\lambda=0.3$):** 0.6911
 
 # Conclusion
-SoftRM did not significantly improve performance against MCCFR opponents in Kuhn Poker. The tiny entropy shift suggests the smoothing was too weak or the state space too small to allow for meaningful strategy divergence. Future work should scale this to Leduc Hold'em to see if the complexity allows the regularizer more "room" to work.
+SoftRM did not significantly improve performance against MCCFR opponents in Kuhn Poker. The tiny entropy shift suggests the smoothing was too weak or the state space too small to allow for meaningful strategy divergence. Future work should scale this to Leduc Hold'em to see if the complexity allows the regularizer more "room" to work. Next step is to move to larger games where there is greater room for entropy to develop differences in policy, and to test other models, such as an ensemble reinforcement learning model.
