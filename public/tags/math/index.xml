@@ -6,8 +6,15 @@
     <description>Recent content in Math on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poker Bot Project</title>
+      <link>http://localhost:1313/posts/poker-bot-project/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/poker-bot-project/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Many ML models are trained to perform well against optimal or near-optimal behavior, but real-world opponents are inconsistent and unpredictable. This led me to wonder if training for theoretically strong play also leads to the highest payoff against imperfect opponents. In Kuhn Poker, game-theory optimal (GTO) strategies aimed at minimizing exploitation are not guaranteed to yield the highest returns against imperfect opponents.&lt;/p&gt;&#xA;&lt;p&gt;I modify Deep CFR, a self-play learning method that uses neural networks to approximate action preferences. My project investigates smoothing this learning process to produce strategies that perform better against imperfect opponents. The input to the model is the information state $I$, which consists of the private card and the public betting history. The model outputs a probability distribution over the legal actions $a$ (check, bet, etc.).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Machine Learning Notes</title>
       <link>http://localhost:1313/posts/ml-notes/</link>

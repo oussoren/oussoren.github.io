@@ -6,8 +6,15 @@
     <description>Recent content in Programming on Max Oussoren</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poker Bot Project</title>
+      <link>http://localhost:1313/posts/poker-bot-project/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/poker-bot-project/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Many ML models are trained to perform well against optimal or near-optimal behavior, but real-world opponents are inconsistent and unpredictable. This led me to wonder if training for theoretically strong play also leads to the highest payoff against imperfect opponents. In Kuhn Poker, game-theory optimal (GTO) strategies aimed at minimizing exploitation are not guaranteed to yield the highest returns against imperfect opponents.&lt;/p&gt;&#xA;&lt;p&gt;I modify Deep CFR, a self-play learning method that uses neural networks to approximate action preferences. My project investigates smoothing this learning process to produce strategies that perform better against imperfect opponents. The input to the model is the information state $I$, which consists of the private card and the public betting history. The model outputs a probability distribution over the legal actions $a$ (check, bet, etc.).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Machine Learning Notes</title>
       <link>http://localhost:1313/posts/ml-notes/</link>
@@ -31,10 +38,10 @@
     </item>
     <item>
       <title>Poker Bot Project</title>
-      <link>http://localhost:1313/posts/poker-bot-project/</link>
+      <link>http://localhost:1313/posts/poker-game-project/</link>
       <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/poker-bot-project/</guid>
-      <description>&lt;h1 id=&#34;poker-bot&#34;&gt;Poker Bot&lt;/h1&gt;&#xA;&lt;p&gt;Built an Object-Oriented Poker Environment that tracks everything from player action history to hand strength and runs smoothly in all three standard rulesets. Created standard bots of all playstyles(from loose and aggressive to tight and defensive) based off of standard heuristics. Currently working on implementing a ML Entity to be trained off of public player action history and a collection of game data from professional poker matches.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hand Evaluation&lt;/strong&gt;: Accurately ranks poker hands from high card to royal flush&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pot Odds Calculation&lt;/strong&gt;: Determines the mathematical probability of winning&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Betting Strategy&lt;/strong&gt;: Makes optimal betting decisions based on game theory&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt;: Clean Qt-based interface for interaction&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;technical-details&#34;&gt;Technical Details&lt;/h2&gt;&#xA;&lt;p&gt;The bot is written in C++ for performance and uses the Qt framework for the GUI. The core algorithms handle:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/poker-game-project/</guid>
+      <description>&lt;h1 id=&#34;poker-game-environment&#34;&gt;Poker Game Environment&lt;/h1&gt;&#xA;&lt;p&gt;Built an Object-Oriented Poker Environment that tracks everything from player action history to hand strength and runs smoothly in all three standard rulesets. Created standard bots of all playstyles(from loose and aggressive to tight and defensive) based off of standard heuristics.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hand Evaluation&lt;/strong&gt;: Accurately ranks poker hands from high card to royal flush&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pot Odds Calculation&lt;/strong&gt;: Determines the mathematical probability of winning&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Betting Strategy&lt;/strong&gt;: Makes optimal betting decisions based on game theory&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;User Interface&lt;/strong&gt;: Clean Qt-based interface for interaction&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;technical-details&#34;&gt;Technical Details&lt;/h2&gt;&#xA;&lt;p&gt;The bot is written in C++ for performance and uses the Qt framework for the GUI. The core algorithms handle:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stock Scraper Project</title>
