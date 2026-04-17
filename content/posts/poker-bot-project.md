@@ -88,3 +88,6 @@ Mean policy entropy changed only slightly:
 
 # Conclusion
 SoftRM did not significantly improve performance against MCCFR opponents in Kuhn Poker. The tiny entropy shift suggests the smoothing was too weak or the state space too small to allow for meaningful strategy divergence. Future work should scale this to Leduc Hold'em to see if the complexity allows the regularizer more "room" to work. Next step is to move to larger games where there is greater room for entropy to develop differences in policy, and to test other models, such as an ensemble reinforcement learning model.
+
+# Current
+Working on implementing an ensemble reinforcement learner which weighs the policies of an extremely entropic model (ATM using a standard Q-learner) and a standard Deep CFR model.
